@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "clay-banks-Hf8n0RUk7g0-unsplash.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

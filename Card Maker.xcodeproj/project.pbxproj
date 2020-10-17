@@ -1,0 +1,837 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DA3F0F87AE8CA85A150476B /* Pods_Invitation_Maker_Invitation_MakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E465E1E1604FD25E77C9FD /* Pods_Invitation_Maker_Invitation_MakerUITests.framework */; };
+		85B2C7C12133AF827F0171F0 /* Pods_Invitation_Maker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E52E9951321D5CF07D15D3 /* Pods_Invitation_Maker.framework */; };
+		91B8C3024237FD7A036F0999 /* Pods_Invitation_MakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7555E83D7B022EA53AE8128D /* Pods_Invitation_MakerTests.framework */; };
+		EC5FD0982532C70D00C5CEC0 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5FD0972532C70D00C5CEC0 /* CellModel.swift */; };
+		EC5FD09D2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC5FD09C2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf */; };
+		EC5FD09E2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC5FD09C2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf */; };
+		EC5FD0D12533007900C5CEC0 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5FD0972532C70D00C5CEC0 /* CellModel.swift */; };
+		EC5FD0E62533108C00C5CEC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5FD0E52533108C00C5CEC0 /* Assets.xcassets */; };
+		EC5FD0EB2533109800C5CEC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5FD0EA2533109800C5CEC0 /* Assets.xcassets */; };
+		EC5FD0F0253310D300C5CEC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5FD0EF253310D300C5CEC0 /* Assets.xcassets */; };
+		EC92A4CB2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC92A4CA2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf */; };
+		EC92A4CC2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC92A4CA2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf */; };
+		ECA0BE8C25307E8300EE337C /* CustomTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA0BE8B25307E8300EE337C /* CustomTopicCell.swift */; };
+		ECA0BE8E25308FE200EE337C /* CardSelectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA0BE8D25308FE200EE337C /* CardSelectingViewController.swift */; };
+		ECDB8FCB2529FEFF0026035C /* TopicScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB8FCA2529FEFF0026035C /* TopicScreenViewController.swift */; };
+		ECE3C170253583E000B0B394 /* InvitationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE3C16F253583E000B0B394 /* InvitationCard.swift */; };
+		ECE3C1752535842600B0B394 /* GreetingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE3C1742535842600B0B394 /* GreetingCard.swift */; };
+		ECE3C17F2535944500B0B394 /* icons8-go_back.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE3C17E2535944500B0B394 /* icons8-go_back.png */; };
+		ECFC3E9A2527611E00748B20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC3E992527611E00748B20 /* AppDelegate.swift */; };
+		ECFC3E9C2527611E00748B20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC3E9B2527611E00748B20 /* SceneDelegate.swift */; };
+		ECFC3E9E2527611E00748B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC3E9D2527611E00748B20 /* ViewController.swift */; };
+		ECFC3EA12527611E00748B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECFC3E9F2527611E00748B20 /* Main.storyboard */; };
+		ECFC3EA62527612100748B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECFC3EA42527612100748B20 /* LaunchScreen.storyboard */; };
+		ECFC3EB12527612200748B20 /* Card_MakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC3EB02527612200748B20 /* Card_MakerTests.swift */; };
+		ECFC3EBC2527612200748B20 /* Card_MakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC3EBB2527612200748B20 /* Card_MakerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ECFC3EAD2527612200748B20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECFC3E8E2527611E00748B20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFC3E952527611E00748B20;
+			remoteInfo = "Invitation Maker";
+		};
+		ECFC3EB82527612200748B20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECFC3E8E2527611E00748B20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFC3E952527611E00748B20;
+			remoteInfo = "Invitation Maker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		32E3BCAB66742B7FDCB5FBBD /* Pods-Invitation Maker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation Maker.release.xcconfig"; path = "Target Support Files/Pods-Invitation Maker/Pods-Invitation Maker.release.xcconfig"; sourceTree = "<group>"; };
+		3A940A6F1F6D221AF831047C /* Pods-Invitation MakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation MakerTests.release.xcconfig"; path = "Target Support Files/Pods-Invitation MakerTests/Pods-Invitation MakerTests.release.xcconfig"; sourceTree = "<group>"; };
+		40A2AF18E96677B10C6440C6 /* Pods-Invitation Maker-Invitation MakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation Maker-Invitation MakerUITests.release.xcconfig"; path = "Target Support Files/Pods-Invitation Maker-Invitation MakerUITests/Pods-Invitation Maker-Invitation MakerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7555E83D7B022EA53AE8128D /* Pods_Invitation_MakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Invitation_MakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F897ED2452AD10E7555E01A /* Pods-Invitation MakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation MakerTests.debug.xcconfig"; path = "Target Support Files/Pods-Invitation MakerTests/Pods-Invitation MakerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B089E1072B260E60A60A93A6 /* Pods-Invitation Maker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation Maker.debug.xcconfig"; path = "Target Support Files/Pods-Invitation Maker/Pods-Invitation Maker.debug.xcconfig"; sourceTree = "<group>"; };
+		CF17E30140B6214CF22E094A /* Pods-Invitation Maker-Invitation MakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation Maker-Invitation MakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Invitation Maker-Invitation MakerUITests/Pods-Invitation Maker-Invitation MakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D5E465E1E1604FD25E77C9FD /* Pods_Invitation_Maker_Invitation_MakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Invitation_Maker_Invitation_MakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9E52E9951321D5CF07D15D3 /* Pods_Invitation_Maker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Invitation_Maker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC5FD0972532C70D00C5CEC0 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		EC5FD09C2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Piazzolla-Italic-VariableFont_opsz,wght.ttf"; sourceTree = "<group>"; };
+		EC5FD0E52533108C00C5CEC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Invitation Maker/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		EC5FD0EA2533109800C5CEC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Invitation Maker/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		EC5FD0EF253310D300C5CEC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC92A4CA2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lacosta_PERSONAL_USE_ONLY.ttf; sourceTree = "<group>"; };
+		ECA0BE8B25307E8300EE337C /* CustomTopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTopicCell.swift; sourceTree = "<group>"; };
+		ECA0BE8D25308FE200EE337C /* CardSelectingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectingViewController.swift; sourceTree = "<group>"; };
+		ECDB8FCA2529FEFF0026035C /* TopicScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicScreenViewController.swift; sourceTree = "<group>"; };
+		ECE3C16F253583E000B0B394 /* InvitationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationCard.swift; sourceTree = "<group>"; };
+		ECE3C1742535842600B0B394 /* GreetingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingCard.swift; sourceTree = "<group>"; };
+		ECE3C17E2535944500B0B394 /* icons8-go_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-go_back.png"; path = "../../../../icons8-go_back.png"; sourceTree = "<group>"; };
+		ECFC3E962527611E00748B20 /* Card Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFC3E992527611E00748B20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ECFC3E9B2527611E00748B20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ECFC3E9D2527611E00748B20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECFC3EA02527611E00748B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECFC3EA52527612100748B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECFC3EA72527612100748B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECFC3EAC2527612200748B20 /* Card MakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Card MakerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFC3EB02527612200748B20 /* Card_MakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_MakerTests.swift; sourceTree = "<group>"; };
+		ECFC3EB22527612200748B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECFC3EB72527612200748B20 /* Card MakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Card MakerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFC3EBB2527612200748B20 /* Card_MakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_MakerUITests.swift; sourceTree = "<group>"; };
+		ECFC3EBD2527612200748B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECFC3E932527611E00748B20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B2C7C12133AF827F0171F0 /* Pods_Invitation_Maker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFC3EA92527612200748B20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91B8C3024237FD7A036F0999 /* Pods_Invitation_MakerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFC3EB42527612200748B20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DA3F0F87AE8CA85A150476B /* Pods_Invitation_Maker_Invitation_MakerUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4DF3CB10317B83D3121CC60D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9E52E9951321D5CF07D15D3 /* Pods_Invitation_Maker.framework */,
+				D5E465E1E1604FD25E77C9FD /* Pods_Invitation_Maker_Invitation_MakerUITests.framework */,
+				7555E83D7B022EA53AE8128D /* Pods_Invitation_MakerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDF2A9E8097EF7AA08805120 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B089E1072B260E60A60A93A6 /* Pods-Invitation Maker.debug.xcconfig */,
+				32E3BCAB66742B7FDCB5FBBD /* Pods-Invitation Maker.release.xcconfig */,
+				CF17E30140B6214CF22E094A /* Pods-Invitation Maker-Invitation MakerUITests.debug.xcconfig */,
+				40A2AF18E96677B10C6440C6 /* Pods-Invitation Maker-Invitation MakerUITests.release.xcconfig */,
+				9F897ED2452AD10E7555E01A /* Pods-Invitation MakerTests.debug.xcconfig */,
+				3A940A6F1F6D221AF831047C /* Pods-Invitation MakerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EC5FD0CF2533005400C5CEC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECFC3E9F2527611E00748B20 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC5FD0D02533006400C5CEC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC5FD0972532C70D00C5CEC0 /* CellModel.swift */,
+				ECE3C16F253583E000B0B394 /* InvitationCard.swift */,
+				ECE3C1742535842600B0B394 /* GreetingCard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC5FD0D52533008600C5CEC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ECFC3E9D2527611E00748B20 /* ViewController.swift */,
+				ECDB8FCA2529FEFF0026035C /* TopicScreenViewController.swift */,
+				ECA0BE8D25308FE200EE337C /* CardSelectingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC5FD0D7253300B900C5CEC0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ECA0BE8B25307E8300EE337C /* CustomTopicCell.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EC5FD0D8253300C800C5CEC0 /* TextFont */ = {
+			isa = PBXGroup;
+			children = (
+				EC5FD0E52533108C00C5CEC0 /* Assets.xcassets */,
+				EC5FD0EA2533109800C5CEC0 /* Assets.xcassets */,
+				EC5FD09C2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf */,
+				EC92A4CA2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf */,
+			);
+			path = TextFont;
+			sourceTree = "<group>";
+		};
+		ECFC3E8D2527611E00748B20 = {
+			isa = PBXGroup;
+			children = (
+				ECFC3E982527611E00748B20 /* Card Maker */,
+				ECFC3EAF2527612200748B20 /* Card MakerTests */,
+				ECFC3EBA2527612200748B20 /* Card MakerUITests */,
+				ECFC3E972527611E00748B20 /* Products */,
+				CDF2A9E8097EF7AA08805120 /* Pods */,
+				4DF3CB10317B83D3121CC60D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ECFC3E972527611E00748B20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECFC3E962527611E00748B20 /* Card Maker.app */,
+				ECFC3EAC2527612200748B20 /* Card MakerTests.xctest */,
+				ECFC3EB72527612200748B20 /* Card MakerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECFC3E982527611E00748B20 /* Card Maker */ = {
+			isa = PBXGroup;
+			children = (
+				ECFC3E992527611E00748B20 /* AppDelegate.swift */,
+				ECFC3E9B2527611E00748B20 /* SceneDelegate.swift */,
+				EC5FD0CF2533005400C5CEC0 /* View */,
+				EC5FD0D02533006400C5CEC0 /* Model */,
+				EC5FD0D52533008600C5CEC0 /* Controller */,
+				EC5FD0D7253300B900C5CEC0 /* Extension */,
+				ECFC3EA42527612100748B20 /* LaunchScreen.storyboard */,
+				ECE3C17E2535944500B0B394 /* icons8-go_back.png */,
+				EC5FD0D8253300C800C5CEC0 /* TextFont */,
+				ECFC3EA72527612100748B20 /* Info.plist */,
+				EC5FD0EF253310D300C5CEC0 /* Assets.xcassets */,
+			);
+			path = "Card Maker";
+			sourceTree = SOURCE_ROOT;
+		};
+		ECFC3EAF2527612200748B20 /* Card MakerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECFC3EB02527612200748B20 /* Card_MakerTests.swift */,
+				ECFC3EB22527612200748B20 /* Info.plist */,
+			);
+			path = "Card MakerTests";
+			sourceTree = "<group>";
+		};
+		ECFC3EBA2527612200748B20 /* Card MakerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ECFC3EBB2527612200748B20 /* Card_MakerUITests.swift */,
+				ECFC3EBD2527612200748B20 /* Info.plist */,
+			);
+			path = "Card MakerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECFC3E952527611E00748B20 /* Card Maker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECFC3EC02527612200748B20 /* Build configuration list for PBXNativeTarget "Card Maker" */;
+			buildPhases = (
+				11A022589A6E268C198D6725 /* [CP] Check Pods Manifest.lock */,
+				ECFC3E922527611E00748B20 /* Sources */,
+				ECFC3E932527611E00748B20 /* Frameworks */,
+				ECFC3E942527611E00748B20 /* Resources */,
+				8084390803790FA47E8583F7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Card Maker";
+			productName = "Invitation Maker";
+			productReference = ECFC3E962527611E00748B20 /* Card Maker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ECFC3EAB2527612200748B20 /* Card MakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECFC3EC32527612200748B20 /* Build configuration list for PBXNativeTarget "Card MakerTests" */;
+			buildPhases = (
+				15231E5E216A3EC3C5E160B4 /* [CP] Check Pods Manifest.lock */,
+				ECFC3EA82527612200748B20 /* Sources */,
+				ECFC3EA92527612200748B20 /* Frameworks */,
+				ECFC3EAA2527612200748B20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECFC3EAE2527612200748B20 /* PBXTargetDependency */,
+			);
+			name = "Card MakerTests";
+			productName = "Invitation MakerTests";
+			productReference = ECFC3EAC2527612200748B20 /* Card MakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ECFC3EB62527612200748B20 /* Card MakerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECFC3EC62527612200748B20 /* Build configuration list for PBXNativeTarget "Card MakerUITests" */;
+			buildPhases = (
+				498DEA2C6AB47DE18E91BAF5 /* [CP] Check Pods Manifest.lock */,
+				ECFC3EB32527612200748B20 /* Sources */,
+				ECFC3EB42527612200748B20 /* Frameworks */,
+				ECFC3EB52527612200748B20 /* Resources */,
+				FC590701F989FDEB05C67F9E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECFC3EB92527612200748B20 /* PBXTargetDependency */,
+			);
+			name = "Card MakerUITests";
+			productName = "Invitation MakerUITests";
+			productReference = ECFC3EB72527612200748B20 /* Card MakerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECFC3E8E2527611E00748B20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = "Anh Tuan Ng";
+				TargetAttributes = {
+					ECFC3E952527611E00748B20 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					ECFC3EAB2527612200748B20 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = ECFC3E952527611E00748B20;
+					};
+					ECFC3EB62527612200748B20 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = ECFC3E952527611E00748B20;
+					};
+				};
+			};
+			buildConfigurationList = ECFC3E912527611E00748B20 /* Build configuration list for PBXProject "Card Maker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECFC3E8D2527611E00748B20;
+			productRefGroup = ECFC3E972527611E00748B20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECFC3E952527611E00748B20 /* Card Maker */,
+				ECFC3EAB2527612200748B20 /* Card MakerTests */,
+				ECFC3EB62527612200748B20 /* Card MakerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECFC3E942527611E00748B20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5FD09D2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf in Resources */,
+				EC92A4CB2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf in Resources */,
+				ECE3C17F2535944500B0B394 /* icons8-go_back.png in Resources */,
+				ECFC3EA62527612100748B20 /* LaunchScreen.storyboard in Resources */,
+				EC5FD0EB2533109800C5CEC0 /* Assets.xcassets in Resources */,
+				EC5FD0E62533108C00C5CEC0 /* Assets.xcassets in Resources */,
+				EC5FD0F0253310D300C5CEC0 /* Assets.xcassets in Resources */,
+				ECFC3EA12527611E00748B20 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFC3EAA2527612200748B20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFC3EB52527612200748B20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC92A4CC2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf in Resources */,
+				EC5FD09E2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11A022589A6E268C198D6725 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Invitation Maker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15231E5E216A3EC3C5E160B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Invitation MakerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		498DEA2C6AB47DE18E91BAF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Invitation Maker-Invitation MakerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8084390803790FA47E8583F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker/Pods-Invitation Maker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker/Pods-Invitation Maker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker/Pods-Invitation Maker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC590701F989FDEB05C67F9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker-Invitation MakerUITests/Pods-Invitation Maker-Invitation MakerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker-Invitation MakerUITests/Pods-Invitation Maker-Invitation MakerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker-Invitation MakerUITests/Pods-Invitation Maker-Invitation MakerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECFC3E922527611E00748B20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECDB8FCB2529FEFF0026035C /* TopicScreenViewController.swift in Sources */,
+				ECE3C1752535842600B0B394 /* GreetingCard.swift in Sources */,
+				ECFC3E9E2527611E00748B20 /* ViewController.swift in Sources */,
+				ECFC3E9A2527611E00748B20 /* AppDelegate.swift in Sources */,
+				ECA0BE8E25308FE200EE337C /* CardSelectingViewController.swift in Sources */,
+				EC5FD0982532C70D00C5CEC0 /* CellModel.swift in Sources */,
+				ECFC3E9C2527611E00748B20 /* SceneDelegate.swift in Sources */,
+				ECE3C170253583E000B0B394 /* InvitationCard.swift in Sources */,
+				ECA0BE8C25307E8300EE337C /* CustomTopicCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFC3EA82527612200748B20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFC3EB12527612200748B20 /* Card_MakerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFC3EB32527612200748B20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFC3EBC2527612200748B20 /* Card_MakerUITests.swift in Sources */,
+				EC5FD0D12533007900C5CEC0 /* CellModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECFC3EAE2527612200748B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFC3E952527611E00748B20 /* Card Maker */;
+			targetProxy = ECFC3EAD2527612200748B20 /* PBXContainerItemProxy */;
+		};
+		ECFC3EB92527612200748B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFC3E952527611E00748B20 /* Card Maker */;
+			targetProxy = ECFC3EB82527612200748B20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ECFC3E9F2527611E00748B20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECFC3EA02527611E00748B20 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ECFC3EA42527612100748B20 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECFC3EA52527612100748B20 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECFC3EBE2527612200748B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ECFC3EBF2527612200748B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECFC3EC12527612200748B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B089E1072B260E60A60A93A6 /* Pods-Invitation Maker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Card Maker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ngnahtn.Invitation-Maker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECFC3EC22527612200748B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32E3BCAB66742B7FDCB5FBBD /* Pods-Invitation Maker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Card Maker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ngnahtn.Invitation-Maker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ECFC3EC42527612200748B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F897ED2452AD10E7555E01A /* Pods-Invitation MakerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Invitation MakerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ngnahtn.Invitation-MakerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Card Maker.app/Card Maker";
+			};
+			name = Debug;
+		};
+		ECFC3EC52527612200748B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A940A6F1F6D221AF831047C /* Pods-Invitation MakerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Invitation MakerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ngnahtn.Invitation-MakerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Card Maker.app/Card Maker";
+			};
+			name = Release;
+		};
+		ECFC3EC72527612200748B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF17E30140B6214CF22E094A /* Pods-Invitation Maker-Invitation MakerUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Invitation MakerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ngnahtn.Invitation-MakerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Invitation Maker";
+			};
+			name = Debug;
+		};
+		ECFC3EC82527612200748B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40A2AF18E96677B10C6440C6 /* Pods-Invitation Maker-Invitation MakerUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Invitation MakerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ngnahtn.Invitation-MakerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Invitation Maker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECFC3E912527611E00748B20 /* Build configuration list for PBXProject "Card Maker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFC3EBE2527612200748B20 /* Debug */,
+				ECFC3EBF2527612200748B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECFC3EC02527612200748B20 /* Build configuration list for PBXNativeTarget "Card Maker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFC3EC12527612200748B20 /* Debug */,
+				ECFC3EC22527612200748B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECFC3EC32527612200748B20 /* Build configuration list for PBXNativeTarget "Card MakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFC3EC42527612200748B20 /* Debug */,
+				ECFC3EC52527612200748B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECFC3EC62527612200748B20 /* Build configuration list for PBXNativeTarget "Card MakerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFC3EC72527612200748B20 /* Debug */,
+				ECFC3EC82527612200748B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECFC3E8E2527611E00748B20 /* Project object */;
+}

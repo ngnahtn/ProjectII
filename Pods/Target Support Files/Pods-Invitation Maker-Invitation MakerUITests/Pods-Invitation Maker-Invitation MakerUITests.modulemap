@@ -1,0 +1,6 @@
+framework module Pods_Invitation_Maker_Invitation_MakerUITests {
+  umbrella header "Pods-Invitation Maker-Invitation MakerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
