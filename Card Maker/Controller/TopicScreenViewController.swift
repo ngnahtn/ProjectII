@@ -108,6 +108,10 @@ class TopicScreenViewController: UIViewController {
     
     
     fileprivate func setContentView() {
+        
+        
+        
+        
         // MARK: - headerView
         let headerView = UIView()
         headerView.backgroundColor = .clear
@@ -144,8 +148,8 @@ class TopicScreenViewController: UIViewController {
         view.addSubview(themeName)
         
         NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: headerView.safeAreaLayoutGuide.bottomAnchor,constant: 40),
-            contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+            contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -30),
             contentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant:-20),
             contentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20)
         ])
@@ -166,7 +170,6 @@ class TopicScreenViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             invitationCollectionView.topAnchor.constraint(equalTo: invitationLable.safeAreaLayoutGuide.bottomAnchor, constant: 10),
-            //            topicCollectionView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor,constant: -220),
             invitationCollectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             invitationCollectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             invitationCollectionView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3)
@@ -183,12 +186,10 @@ class TopicScreenViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             greetingCollectionView.topAnchor.constraint(equalTo: greetingLable.bottomAnchor, constant: 10),
-            //            topicCollectionView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor,constant: -220),
             greetingCollectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             greetingCollectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             greetingCollectionView.heightAnchor.constraint(equalTo: invitationCollectionView.heightAnchor)
         ])
-        
         
     }
     
