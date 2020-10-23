@@ -9,99 +9,85 @@
 import UIKit
 
 class CardSelectingViewController: UIViewController {
+    let cellID = "CellID"
     
-    lazy var backButton: UIButton = {
+    private lazy var contentStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.backgroundColor = .clear
+        stackView.distribution = .fill
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    private lazy var appName: UILabel = {
+        let lable = UILabel()
+        lable.textColor = UIColor(rgb: 0xff414d)
+        lable.text = "Card Maker"
+        lable.font = UIFont(name: "LacostaPERSONALUSEONLY", size: 40)
+        lable.translatesAutoresizingMaskIntoConstraints = false
+        lable.textAlignment = .center
+        return lable
+    }()
+    private lazy var backButton: UIButton = {
         let img = UIImage(named: "buttonicon_img")?.withRenderingMode(.alwaysOriginal)
         let button = UIButton(type: .system)
         button.backgroundColor = .clear
         button.addTarget(self, action: #selector(handleTouchButton(_:)), for: .touchUpInside)
-//        button.setTitle("Back", for: .normal)
         button.setImage(img, for: .normal)
         button.imageView?.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    lazy var appName : UILabel = {
-        let lable = UILabel()
-        lable.text = "Card Maker"
-        lable.textColor = .red
-        lable.font = UIFont.init(name: "LacostaPERSONALUSEONLY", size: 40)
-        //        lable.textAlignment = .center
-        lable.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var cardSellectingView: UICollectionView = {
+        let layout = CustomFlowLayout()
+        layout.delegate = self
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.isScrollEnabled = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
-        return lable
-        
+        return collectionView
     }()
     
-    lazy var welcomeImg: UIImageView = {
-        let img = UIImage(named: "welcome_img")
-        let imgView = UIImageView(image: img)
-        imgView.translatesAutoresizingMaskIntoConstraints = false
-        imgView.contentMode = .scaleAspectFit
-        return imgView
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.148111701, green: 0.1289984584, blue: 0.1116550639, alpha: 1)
         view.addSubview(backButton)
+        view.addSubview(contentStackView)
+        cardSellectingView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        cardSellectingView.isPagingEnabled = true
         setConstrain()
+        setCollectionView()
         // Do any additional setup after loading the view.
     }
     
+    fileprivate func setCollectionView() {
+        self.contentStackView .addArrangedSubview(appName)
+        self.contentStackView .addArrangedSubview(cardSellectingView)
+        self.contentStackView .addArrangedSubview(backButton)
+        self.contentStackView.spacing = 20.0
+        
+        
+    }
+    
     fileprivate func setConstrain() {
-        
-        let headerView = UIView()
-        headerView.backgroundColor = .clear
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(headerView)
-        view.addSubview(welcomeImg)
         NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            headerView.bottomAnchor.constraint(equalTo: welcomeImg.bottomAnchor)
+            contentStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            contentStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            contentStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            contentStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        
-       
-        
-        headerView.addSubview(appName)
-        
-        NSLayoutConstraint.activate([
-            appName.topAnchor.constraint(equalTo: headerView.topAnchor,constant: 20),
-            appName.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-        ])
-        
-        NSLayoutConstraint.activate([
-            welcomeImg.topAnchor.constraint(equalTo: headerView.topAnchor,constant: 10),
-            welcomeImg.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            welcomeImg.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-        ])
-        
-        let contentView = UIView()
-        contentView.backgroundColor = .clear
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(contentView)
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 0),
-            contentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            contentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
-        view.addSubview(backButton)
-        
-        NSLayoutConstraint.activate([
-            backButton.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            backButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
-        
     }
     
     //MARK: - target
     @objc func handleTouchButton(_ sender: UIButton){
         self.navigationController?.popViewController(animated: true)
-        
+    
     }
     /*
      // MARK: - Navigation
@@ -112,5 +98,40 @@ class CardSelectingViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+// MARK: - UICollectionViewDelegate
+extension CardSelectingViewController: UICollectionViewDelegate {
+    
+}
+
+// MARK: - UICollectionViewDataSource
+extension CardSelectingViewController: UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
+        cell.backgroundColor = indexPath.item % 2 == 0 ? .red: .green
+        return cell
+    }
+    
+    
+}
+// MARK: - CustomFlowLayoutDelegate
+extension CardSelectingViewController: CustomFlowLayoutDelegate {
+    func collectionView(collectionView: UICollectionView, itemWidth: CGFloat, heightForIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return (cardSellectingView.frame.width)/3
+    }
+    
+    func getNumberOfCollum() -> Int {
+        return 2
+    }
+    
     
 }

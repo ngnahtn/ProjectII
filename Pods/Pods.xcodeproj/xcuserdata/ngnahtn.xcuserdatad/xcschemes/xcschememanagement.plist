@@ -67,21 +67,21 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>Pods-Invitation Maker-Invitation MakerUITests.xcscheme</key>
+		<key>Pods-Card Maker-Card MakerUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>Pods-Invitation Maker.xcscheme</key>
+		<key>Pods-Card Maker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>Pods-Invitation MakerTests.xcscheme</key>
+		<key>Pods-Card MakerTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

@@ -7,16 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DA3F0F87AE8CA85A150476B /* Pods_Invitation_Maker_Invitation_MakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E465E1E1604FD25E77C9FD /* Pods_Invitation_Maker_Invitation_MakerUITests.framework */; };
-		85B2C7C12133AF827F0171F0 /* Pods_Invitation_Maker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E52E9951321D5CF07D15D3 /* Pods_Invitation_Maker.framework */; };
-		91B8C3024237FD7A036F0999 /* Pods_Invitation_MakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7555E83D7B022EA53AE8128D /* Pods_Invitation_MakerTests.framework */; };
+		B4D44F10DA14A362D90D8982 /* Pods_Card_MakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B83663A8BD2BF9987F44E75 /* Pods_Card_MakerTests.framework */; };
+		DDA90B2B0C6477BD196F9595 /* Pods_Card_Maker_Card_MakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F316A6D8F51141F7BA59255 /* Pods_Card_Maker_Card_MakerUITests.framework */; };
 		EC5FD0982532C70D00C5CEC0 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5FD0972532C70D00C5CEC0 /* CellModel.swift */; };
 		EC5FD09D2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC5FD09C2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf */; };
 		EC5FD09E2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC5FD09C2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf */; };
 		EC5FD0D12533007900C5CEC0 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5FD0972532C70D00C5CEC0 /* CellModel.swift */; };
-		EC5FD0E62533108C00C5CEC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5FD0E52533108C00C5CEC0 /* Assets.xcassets */; };
-		EC5FD0EB2533109800C5CEC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5FD0EA2533109800C5CEC0 /* Assets.xcassets */; };
 		EC5FD0F0253310D300C5CEC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5FD0EF253310D300C5CEC0 /* Assets.xcassets */; };
+		EC919A612543033300B8C6A8 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC919A602543033300B8C6A8 /* CustomFlowLayout.swift */; };
 		EC92A4CB2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC92A4CA2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf */; };
 		EC92A4CC2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC92A4CA2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf */; };
 		ECA0BE8C25307E8300EE337C /* CustomTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA0BE8B25307E8300EE337C /* CustomTopicCell.swift */; };
@@ -32,6 +30,7 @@
 		ECFC3EA62527612100748B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECFC3EA42527612100748B20 /* LaunchScreen.storyboard */; };
 		ECFC3EB12527612200748B20 /* Card_MakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC3EB02527612200748B20 /* Card_MakerTests.swift */; };
 		ECFC3EBC2527612200748B20 /* Card_MakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC3EBB2527612200748B20 /* Card_MakerUITests.swift */; };
+		FCA4F0B50132E217D79E9393 /* Pods_Card_Maker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA16E5373A01557C8755C8D /* Pods_Card_Maker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,20 +51,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		32E3BCAB66742B7FDCB5FBBD /* Pods-Invitation Maker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation Maker.release.xcconfig"; path = "Target Support Files/Pods-Invitation Maker/Pods-Invitation Maker.release.xcconfig"; sourceTree = "<group>"; };
-		3A940A6F1F6D221AF831047C /* Pods-Invitation MakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation MakerTests.release.xcconfig"; path = "Target Support Files/Pods-Invitation MakerTests/Pods-Invitation MakerTests.release.xcconfig"; sourceTree = "<group>"; };
-		40A2AF18E96677B10C6440C6 /* Pods-Invitation Maker-Invitation MakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation Maker-Invitation MakerUITests.release.xcconfig"; path = "Target Support Files/Pods-Invitation Maker-Invitation MakerUITests/Pods-Invitation Maker-Invitation MakerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7555E83D7B022EA53AE8128D /* Pods_Invitation_MakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Invitation_MakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F897ED2452AD10E7555E01A /* Pods-Invitation MakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation MakerTests.debug.xcconfig"; path = "Target Support Files/Pods-Invitation MakerTests/Pods-Invitation MakerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B089E1072B260E60A60A93A6 /* Pods-Invitation Maker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation Maker.debug.xcconfig"; path = "Target Support Files/Pods-Invitation Maker/Pods-Invitation Maker.debug.xcconfig"; sourceTree = "<group>"; };
-		CF17E30140B6214CF22E094A /* Pods-Invitation Maker-Invitation MakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invitation Maker-Invitation MakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Invitation Maker-Invitation MakerUITests/Pods-Invitation Maker-Invitation MakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D5E465E1E1604FD25E77C9FD /* Pods_Invitation_Maker_Invitation_MakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Invitation_Maker_Invitation_MakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9E52E9951321D5CF07D15D3 /* Pods_Invitation_Maker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Invitation_Maker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EA2F27CB92FE70DA448DC45 /* Pods-Card Maker-Card MakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Maker-Card MakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Card Maker-Card MakerUITests/Pods-Card Maker-Card MakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2B83663A8BD2BF9987F44E75 /* Pods_Card_MakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Card_MakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F316A6D8F51141F7BA59255 /* Pods_Card_Maker_Card_MakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Card_Maker_Card_MakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		504A32B1B24EC58A20A20D92 /* Pods-Card Maker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Maker.release.xcconfig"; path = "Target Support Files/Pods-Card Maker/Pods-Card Maker.release.xcconfig"; sourceTree = "<group>"; };
+		63CB48F82A1D5B8101083304 /* Pods-Card Maker-Card MakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Maker-Card MakerUITests.release.xcconfig"; path = "Target Support Files/Pods-Card Maker-Card MakerUITests/Pods-Card Maker-Card MakerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		974F97D441DA80EC4EC73DD8 /* Pods-Card MakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card MakerTests.debug.xcconfig"; path = "Target Support Files/Pods-Card MakerTests/Pods-Card MakerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD42D45A82DDDF6591DAFEA1 /* Pods-Card MakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card MakerTests.release.xcconfig"; path = "Target Support Files/Pods-Card MakerTests/Pods-Card MakerTests.release.xcconfig"; sourceTree = "<group>"; };
+		CEDF9F6450D8AFC9DF77FE0A /* Pods-Card Maker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Maker.debug.xcconfig"; path = "Target Support Files/Pods-Card Maker/Pods-Card Maker.debug.xcconfig"; sourceTree = "<group>"; };
+		DFA16E5373A01557C8755C8D /* Pods_Card_Maker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Card_Maker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5FD0972532C70D00C5CEC0 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		EC5FD09C2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Piazzolla-Italic-VariableFont_opsz,wght.ttf"; sourceTree = "<group>"; };
-		EC5FD0E52533108C00C5CEC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Invitation Maker/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
-		EC5FD0EA2533109800C5CEC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Invitation Maker/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		EC5FD0EF253310D300C5CEC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC919A602543033300B8C6A8 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		EC92A4CA2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lacosta_PERSONAL_USE_ONLY.ttf; sourceTree = "<group>"; };
 		ECA0BE8B25307E8300EE337C /* CustomTopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTopicCell.swift; sourceTree = "<group>"; };
 		ECA0BE8D25308FE200EE337C /* CardSelectingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectingViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85B2C7C12133AF827F0171F0 /* Pods_Invitation_Maker.framework in Frameworks */,
+				FCA4F0B50132E217D79E9393 /* Pods_Card_Maker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91B8C3024237FD7A036F0999 /* Pods_Invitation_MakerTests.framework in Frameworks */,
+				B4D44F10DA14A362D90D8982 /* Pods_Card_MakerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,19 +107,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DA3F0F87AE8CA85A150476B /* Pods_Invitation_Maker_Invitation_MakerUITests.framework in Frameworks */,
+				DDA90B2B0C6477BD196F9595 /* Pods_Card_Maker_Card_MakerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4DF3CB10317B83D3121CC60D /* Frameworks */ = {
+		37067C026AE977F57BF3251F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D9E52E9951321D5CF07D15D3 /* Pods_Invitation_Maker.framework */,
-				D5E465E1E1604FD25E77C9FD /* Pods_Invitation_Maker_Invitation_MakerUITests.framework */,
-				7555E83D7B022EA53AE8128D /* Pods_Invitation_MakerTests.framework */,
+				DFA16E5373A01557C8755C8D /* Pods_Card_Maker.framework */,
+				3F316A6D8F51141F7BA59255 /* Pods_Card_Maker_Card_MakerUITests.framework */,
+				2B83663A8BD2BF9987F44E75 /* Pods_Card_MakerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,12 +127,12 @@
 		CDF2A9E8097EF7AA08805120 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B089E1072B260E60A60A93A6 /* Pods-Invitation Maker.debug.xcconfig */,
-				32E3BCAB66742B7FDCB5FBBD /* Pods-Invitation Maker.release.xcconfig */,
-				CF17E30140B6214CF22E094A /* Pods-Invitation Maker-Invitation MakerUITests.debug.xcconfig */,
-				40A2AF18E96677B10C6440C6 /* Pods-Invitation Maker-Invitation MakerUITests.release.xcconfig */,
-				9F897ED2452AD10E7555E01A /* Pods-Invitation MakerTests.debug.xcconfig */,
-				3A940A6F1F6D221AF831047C /* Pods-Invitation MakerTests.release.xcconfig */,
+				CEDF9F6450D8AFC9DF77FE0A /* Pods-Card Maker.debug.xcconfig */,
+				504A32B1B24EC58A20A20D92 /* Pods-Card Maker.release.xcconfig */,
+				1EA2F27CB92FE70DA448DC45 /* Pods-Card Maker-Card MakerUITests.debug.xcconfig */,
+				63CB48F82A1D5B8101083304 /* Pods-Card Maker-Card MakerUITests.release.xcconfig */,
+				974F97D441DA80EC4EC73DD8 /* Pods-Card MakerTests.debug.xcconfig */,
+				BD42D45A82DDDF6591DAFEA1 /* Pods-Card MakerTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -171,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				ECA0BE8B25307E8300EE337C /* CustomTopicCell.swift */,
+				EC919A602543033300B8C6A8 /* CustomFlowLayout.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -178,8 +177,6 @@
 		EC5FD0D8253300C800C5CEC0 /* TextFont */ = {
 			isa = PBXGroup;
 			children = (
-				EC5FD0E52533108C00C5CEC0 /* Assets.xcassets */,
-				EC5FD0EA2533109800C5CEC0 /* Assets.xcassets */,
 				EC5FD09C2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf */,
 				EC92A4CA2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf */,
 			);
@@ -194,7 +191,7 @@
 				ECFC3EBA2527612200748B20 /* Card MakerUITests */,
 				ECFC3E972527611E00748B20 /* Products */,
 				CDF2A9E8097EF7AA08805120 /* Pods */,
-				4DF3CB10317B83D3121CC60D /* Frameworks */,
+				37067C026AE977F57BF3251F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,11 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECFC3EC02527612200748B20 /* Build configuration list for PBXNativeTarget "Card Maker" */;
 			buildPhases = (
-				11A022589A6E268C198D6725 /* [CP] Check Pods Manifest.lock */,
+				395B04E1D000E261B3C736CB /* [CP] Check Pods Manifest.lock */,
 				ECFC3E922527611E00748B20 /* Sources */,
 				ECFC3E932527611E00748B20 /* Frameworks */,
 				ECFC3E942527611E00748B20 /* Resources */,
-				8084390803790FA47E8583F7 /* [CP] Embed Pods Frameworks */,
+				AEB3CADA3E93E554150F99F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,7 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECFC3EC32527612200748B20 /* Build configuration list for PBXNativeTarget "Card MakerTests" */;
 			buildPhases = (
-				15231E5E216A3EC3C5E160B4 /* [CP] Check Pods Manifest.lock */,
+				BE9AC53C0F5F8BD83B58A19F /* [CP] Check Pods Manifest.lock */,
 				ECFC3EA82527612200748B20 /* Sources */,
 				ECFC3EA92527612200748B20 /* Frameworks */,
 				ECFC3EAA2527612200748B20 /* Resources */,
@@ -289,11 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECFC3EC62527612200748B20 /* Build configuration list for PBXNativeTarget "Card MakerUITests" */;
 			buildPhases = (
-				498DEA2C6AB47DE18E91BAF5 /* [CP] Check Pods Manifest.lock */,
+				C31725EC685636F577D3CEEA /* [CP] Check Pods Manifest.lock */,
 				ECFC3EB32527612200748B20 /* Sources */,
 				ECFC3EB42527612200748B20 /* Frameworks */,
 				ECFC3EB52527612200748B20 /* Resources */,
-				FC590701F989FDEB05C67F9E /* [CP] Embed Pods Frameworks */,
+				53EBF4FDDBF200C91A6DAB01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -357,8 +354,6 @@
 				EC92A4CB2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf in Resources */,
 				ECE3C17F2535944500B0B394 /* icons8-go_back.png in Resources */,
 				ECFC3EA62527612100748B20 /* LaunchScreen.storyboard in Resources */,
-				EC5FD0EB2533109800C5CEC0 /* Assets.xcassets in Resources */,
-				EC5FD0E62533108C00C5CEC0 /* Assets.xcassets in Resources */,
 				EC5FD0F0253310D300C5CEC0 /* Assets.xcassets in Resources */,
 				ECFC3EA12527611E00748B20 /* Main.storyboard in Resources */,
 			);
@@ -383,7 +378,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		11A022589A6E268C198D6725 /* [CP] Check Pods Manifest.lock */ = {
+		395B04E1D000E261B3C736CB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,89 +393,89 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Invitation Maker-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Card Maker-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		15231E5E216A3EC3C5E160B4 /* [CP] Check Pods Manifest.lock */ = {
+		53EBF4FDDBF200C91A6DAB01 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Invitation MakerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		498DEA2C6AB47DE18E91BAF5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Invitation Maker-Invitation MakerUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8084390803790FA47E8583F7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker/Pods-Invitation Maker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Card Maker-Card MakerUITests/Pods-Card Maker-Card MakerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker/Pods-Invitation Maker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Card Maker-Card MakerUITests/Pods-Card Maker-Card MakerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker/Pods-Invitation Maker-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Card Maker-Card MakerUITests/Pods-Card Maker-Card MakerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FC590701F989FDEB05C67F9E /* [CP] Embed Pods Frameworks */ = {
+		AEB3CADA3E93E554150F99F1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker-Invitation MakerUITests/Pods-Invitation Maker-Invitation MakerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Card Maker/Pods-Card Maker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker-Invitation MakerUITests/Pods-Invitation Maker-Invitation MakerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Card Maker/Pods-Card Maker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Invitation Maker-Invitation MakerUITests/Pods-Invitation Maker-Invitation MakerUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Card Maker/Pods-Card Maker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE9AC53C0F5F8BD83B58A19F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Card MakerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C31725EC685636F577D3CEEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Card Maker-Card MakerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -498,6 +493,7 @@
 				EC5FD0982532C70D00C5CEC0 /* CellModel.swift in Sources */,
 				ECFC3E9C2527611E00748B20 /* SceneDelegate.swift in Sources */,
 				ECE3C170253583E000B0B394 /* InvitationCard.swift in Sources */,
+				EC919A612543033300B8C6A8 /* CustomFlowLayout.swift in Sources */,
 				ECA0BE8C25307E8300EE337C /* CustomTopicCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +585,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ngnahtn;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -605,7 +602,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -650,6 +647,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ngnahtn;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -660,7 +658,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -672,7 +670,7 @@
 		};
 		ECFC3EC12527612200748B20 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B089E1072B260E60A60A93A6 /* Pods-Invitation Maker.debug.xcconfig */;
+			baseConfigurationReference = CEDF9F6450D8AFC9DF77FE0A /* Pods-Card Maker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -691,7 +689,7 @@
 		};
 		ECFC3EC22527612200748B20 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32E3BCAB66742B7FDCB5FBBD /* Pods-Invitation Maker.release.xcconfig */;
+			baseConfigurationReference = 504A32B1B24EC58A20A20D92 /* Pods-Card Maker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -710,7 +708,7 @@
 		};
 		ECFC3EC42527612200748B20 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F897ED2452AD10E7555E01A /* Pods-Invitation MakerTests.debug.xcconfig */;
+			baseConfigurationReference = 974F97D441DA80EC4EC73DD8 /* Pods-Card MakerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -732,7 +730,7 @@
 		};
 		ECFC3EC52527612200748B20 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A940A6F1F6D221AF831047C /* Pods-Invitation MakerTests.release.xcconfig */;
+			baseConfigurationReference = BD42D45A82DDDF6591DAFEA1 /* Pods-Card MakerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -754,7 +752,7 @@
 		};
 		ECFC3EC72527612200748B20 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF17E30140B6214CF22E094A /* Pods-Invitation Maker-Invitation MakerUITests.debug.xcconfig */;
+			baseConfigurationReference = 1EA2F27CB92FE70DA448DC45 /* Pods-Card Maker-Card MakerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -774,7 +772,7 @@
 		};
 		ECFC3EC82527612200748B20 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40A2AF18E96677B10C6440C6 /* Pods-Invitation Maker-Invitation MakerUITests.release.xcconfig */;
+			baseConfigurationReference = 63CB48F82A1D5B8101083304 /* Pods-Card Maker-Card MakerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
