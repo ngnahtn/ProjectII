@@ -16,8 +16,41 @@ class TopicScreenViewController: UIViewController {
     var invitationTopic = InvitationCard()
     var greetingTopic = GreetingCard()
     
+    // stack total
+    private lazy var contentStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.backgroundColor = .clear
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
     
-    lazy var invitationCollectionView: UICollectionView = {
+        private lazy var subStack1: UIStackView = {
+            let subStack = UIStackView()
+            subStack.backgroundColor = .clear
+            subStack.axis = .vertical
+            subStack.distribution = .fill
+            subStack.addArrangedSubview(invitationLable)
+            subStack.addArrangedSubview(invitationCollectionView)
+            subStack.spacing = 10.0
+            return subStack
+    }()
+    
+    private lazy var subStack2: UIStackView = {
+        let subStack = UIStackView()
+        subStack.backgroundColor = .clear
+        subStack.axis = .vertical
+        subStack1.distribution = .fill
+        subStack.addArrangedSubview(greetingLable)
+        subStack.addArrangedSubview(greetingCollectionView)
+
+        subStack.spacing = 10.0
+        return subStack
+    }()
+        
+
+    private lazy var invitationCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         layout.scrollDirection = .horizontal
@@ -29,7 +62,7 @@ class TopicScreenViewController: UIViewController {
         
     }()
     
-    lazy var greetingCollectionView: UICollectionView = {
+    private lazy var greetingCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         layout.scrollDirection = .horizontal
@@ -41,7 +74,7 @@ class TopicScreenViewController: UIViewController {
         
     }()
     
-    lazy var themeName: UILabel = {
+    private lazy var themeName: UILabel = {
         let lable = UILabel()
         lable.text = "Swipe right to select themes:"
         lable.font = UIFont.init(name: "Piazzolla", size: 30)
@@ -52,18 +85,18 @@ class TopicScreenViewController: UIViewController {
         return lable
     }()
     
-    lazy var appName : UILabel = {
+    private lazy var appName : UILabel = {
         let lable = UILabel()
         lable.text = "Card Maker"
         lable.textColor = UIColor(rgb: 0xff414d)
         lable.font = UIFont.init(name: "LacostaPERSONALUSEONLY", size: 40)
         lable.translatesAutoresizingMaskIntoConstraints = false
-        
+        lable.textAlignment = .center
         return lable
         
     }()
     
-    lazy var invitationLable : UILabel = {
+    private lazy var invitationLable : UILabel = {
         let lable = UILabel()
         lable.text = "Invitation Card:"
         lable.textColor = .white
@@ -72,7 +105,7 @@ class TopicScreenViewController: UIViewController {
         return lable
     } ()
     
-    lazy var greetingLable : UILabel = {
+    private lazy var greetingLable : UILabel = {
         let lable = UILabel()
         lable.text = "Greeting Card:"
         lable.textColor = .white
@@ -81,7 +114,7 @@ class TopicScreenViewController: UIViewController {
         return lable
     } ()
     
-    lazy var welcomeImg: UIImageView = {
+    private lazy var welcomeImg: UIImageView = {
         let img = UIImage(named: "welcome_img")
         let imgView = UIImageView(image: img)
         imgView.translatesAutoresizingMaskIntoConstraints = false
@@ -100,101 +133,54 @@ class TopicScreenViewController: UIViewController {
         greetingCollectionView.isPagingEnabled = true
         invitationCollectionView.isPagingEnabled = true
         view.backgroundColor = #colorLiteral(red: 0.148111701, green: 0.1289984584, blue: 0.1116550639, alpha: 1)
-        setContentView()
+        setStackView()
+        setTheContent()
+        
         // Do any additional setup after loading the view.
     }
     
-    // MARK: - setContentView()
-    
-    
-    fileprivate func setContentView() {
-        
-        
-        
-        
-        // MARK: - headerView
+    fileprivate func setTheContent() {
         let headerView = UIView()
         headerView.backgroundColor = .clear
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(headerView)
-        view.addSubview(welcomeImg)
-        NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            headerView.bottomAnchor.constraint(equalTo: welcomeImg.bottomAnchor)
-        ])
-        
-        
-        
         headerView.addSubview(appName)
+        headerView.addSubview(welcomeImg)
+        headerView.addSubview(themeName)
+        
         NSLayoutConstraint.activate([
-            appName.topAnchor.constraint(equalTo: headerView.topAnchor,constant: 20),
+            welcomeImg.leftAnchor.constraint(equalTo: headerView.leftAnchor),
+            welcomeImg.rightAnchor.constraint(equalTo: headerView.rightAnchor),
+            welcomeImg.topAnchor.constraint(equalTo: headerView.topAnchor),
+            welcomeImg.bottomAnchor.constraint(equalTo: headerView.bottomAnchor)
+            
+        ])
+        
+        NSLayoutConstraint.activate([
+            appName.topAnchor.constraint(equalTo: headerView.topAnchor),
             appName.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            
-            welcomeImg.topAnchor.constraint(equalTo: headerView.topAnchor,constant: 10),
-            welcomeImg.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            welcomeImg.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            
-            
-        ])
-        // MARK: - contenView
-        let contentView = UIView()
-        contentView.backgroundColor = .clear
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        view.addSubview(contentView)
-        view.addSubview(themeName)
-        
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-            contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -30),
-            contentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant:-20),
-            contentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20)
+            appName.leftAnchor.constraint(equalTo: headerView.leftAnchor),
+            appName.rightAnchor.constraint(equalTo: headerView.rightAnchor),
+            themeName.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
+            themeName.leftAnchor.constraint(equalTo: headerView.leftAnchor),
+            themeName.rightAnchor.constraint(equalTo: headerView.rightAnchor),
         ])
         
-        NSLayoutConstraint.activate([
-            themeName.topAnchor.constraint(equalTo: contentView.topAnchor),
-            themeName.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor)
-        ])
+        self.contentStackView.addArrangedSubview(headerView)
+        self.contentStackView.addArrangedSubview(subStack1)
+        self.contentStackView.addArrangedSubview(subStack2)
         
-        contentView.addSubview(invitationLable)
-        NSLayoutConstraint.activate([
-            invitationLable.topAnchor.constraint(equalTo: themeName.bottomAnchor, constant: 40),
-            invitationLable.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor)
-        ])
-        
-        
-        contentView.addSubview(invitationCollectionView)
-        
-        NSLayoutConstraint.activate([
-            invitationCollectionView.topAnchor.constraint(equalTo: invitationLable.safeAreaLayoutGuide.bottomAnchor, constant: 10),
-            invitationCollectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            invitationCollectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            invitationCollectionView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3)
-        ])
-        
-        contentView.addSubview(greetingLable)
-        
-        NSLayoutConstraint.activate([
-            greetingLable.topAnchor.constraint(equalTo: invitationCollectionView.bottomAnchor, constant: 20),
-            greetingLable.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 0)
-        ])
-        
-        contentView.addSubview(greetingCollectionView)
-        
-        NSLayoutConstraint.activate([
-            greetingCollectionView.topAnchor.constraint(equalTo: greetingLable.bottomAnchor, constant: 10),
-            greetingCollectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            greetingCollectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            greetingCollectionView.heightAnchor.constraint(equalTo: invitationCollectionView.heightAnchor)
-        ])
-        
+        contentStackView.spacing = 30.0
     }
     
+    fileprivate func setStackView() {
+        view.addSubview(contentStackView)
+        NSLayoutConstraint.activate([
+            contentStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            contentStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            contentStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            contentStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
 }
-
 // MARK: - UICollectionViewDelegate
 extension TopicScreenViewController: UICollectionViewDelegate {
 }
@@ -241,8 +227,11 @@ extension TopicScreenViewController: UICollectionViewDataSource {
 
 extension TopicScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+        if collectionView == invitationCollectionView {
         return CGSize(width: invitationCollectionView.frame.width, height: invitationCollectionView.frame.height)
+        } else {
+            return CGSize(width: greetingCollectionView.frame.width, height: greetingCollectionView.frame.height)
+        }
         
     }
     
