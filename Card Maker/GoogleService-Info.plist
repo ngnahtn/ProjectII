@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>442427975017-a05tp6ch9iotph02i0l2atppiusn46im.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.442427975017-a05tp6ch9iotph02i0l2atppiusn46im</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAxkUsWcd-wBR1O-_rN5X5Yxti5loOUmdc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>442427975017</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ngnahtn.Invitation-Maker</string>
+	<key>PROJECT_ID</key>
+	<string>fbtest-52875</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fbtest-52875.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:442427975017:ios:d5e797efbde9dafadbc9f8</string>
+	<key>DATABASE_URL</key>
+	<string>https://fbtest-52875.firebaseio.com</string>
+</dict>
+</plist>
