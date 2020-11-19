@@ -9,7 +9,17 @@
 import UIKit
 
 class CardSelectingViewController: UIViewController {
+    weak var navigation: UINavigationController?
+    var identyfi : String = ""
     let cellID = "CellID"
+    let customCell = CardCell()
+    
+    let birthdayImageNameArray = BirthdayPartyImageName()
+    let weddingImageNameArray = WeddingPartyImageName()
+    let christmasImageNameArray = ChristmasPartyImageName()
+    let graduationImageNameArray = GraduationImageName()
+    let motherDayImageNameArray = MothersDayImageName()
+    let fatherDayImageNameArray = FathersDayImageName()
     
     private lazy var contentStackView: UIStackView = {
         let stackView = UIStackView()
@@ -54,15 +64,17 @@ class CardSelectingViewController: UIViewController {
     }()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.148111701, green: 0.1289984584, blue: 0.1116550639, alpha: 1)
         view.addSubview(backButton)
         view.addSubview(contentStackView)
-        cardSellectingView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        cardSellectingView.register(CardCell.self, forCellWithReuseIdentifier: cellID)
         cardSellectingView.isPagingEnabled = true
         setConstrain()
         setCollectionView()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -112,12 +124,61 @@ extension CardSelectingViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        switch identyfi {
+        case "Graduation":
+            return graduationImageNameArray.imageName.count
+        case "Father'sDay":
+            return fatherDayImageNameArray.imageName.count
+        case "Mother'sDay":
+            return motherDayImageNameArray.imageName.count
+        case "WeddingParty":
+            return weddingImageNameArray.imageName.count
+        case "BirthdayParty":
+            return birthdayImageNameArray.imageName.count
+        case "ChristmasParty":
+            return christmasImageNameArray.imageName.count
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
-        cell.backgroundColor = indexPath.item % 2 == 0 ? .red: .green
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CardCell
+        
+        switch identyfi {
+        case "Graduation":
+            let cardsImageName = graduationImageNameArray.imageName[indexPath.item]
+            cell.cardsImage = cardsImageName
+            cell.identify = "Graduation"
+        case "Father'sDay":
+            let cardsImageName = fatherDayImageNameArray.imageName[indexPath.item]
+            cell.cardsImage = cardsImageName
+            cell.identify = identyfi
+
+        case "Mother'sDay":
+            let cardsImageName = motherDayImageNameArray.imageName[indexPath.item]
+            cell.cardsImage = cardsImageName
+            cell.identify = identyfi
+
+        case "WeddingParty":
+            let cardsImageName = weddingImageNameArray.imageName[indexPath.item]
+            cell.cardsImage = cardsImageName
+            cell.identify = identyfi
+
+        case "BirthdayParty":
+            let cardsImageName = birthdayImageNameArray.imageName[indexPath.item]
+            cell.cardsImage = cardsImageName
+            cell.identify = identyfi
+
+        case "ChristmasParty":
+            let cardsImageName = christmasImageNameArray.imageName[indexPath.item]
+            cell.cardsImage = cardsImageName
+            cell.identify = identyfi
+
+        default:
+            print("error")
+        }
+
         return cell
     }
     

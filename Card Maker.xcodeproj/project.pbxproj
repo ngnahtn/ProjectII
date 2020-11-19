@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		847560FC255D986500F29BD3 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847560FB255D986500F29BD3 /* UserProfileViewController.swift */; };
+		847B4AA42566B71D00B38703 /* ImageNameArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B4AA32566B71D00B38703 /* ImageNameArray.swift */; };
+		84AF1E1A2559BF9E00687089 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF1E192559BF9E00687089 /* CardCell.swift */; };
+		84C0E7E8255C23D000154882 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0E7E7255C23D000154882 /* LoginView.swift */; };
+		84C0E7F6255C415C00154882 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C0E7F5255C415C00154882 /* GoogleService-Info.plist */; };
 		B4D44F10DA14A362D90D8982 /* Pods_Card_MakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B83663A8BD2BF9987F44E75 /* Pods_Card_MakerTests.framework */; };
 		DDA90B2B0C6477BD196F9595 /* Pods_Card_Maker_Card_MakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F316A6D8F51141F7BA59255 /* Pods_Card_Maker_Card_MakerUITests.framework */; };
 		EC5FD0982532C70D00C5CEC0 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5FD0972532C70D00C5CEC0 /* CellModel.swift */; };
@@ -22,7 +27,6 @@
 		ECDB8FCB2529FEFF0026035C /* TopicScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB8FCA2529FEFF0026035C /* TopicScreenViewController.swift */; };
 		ECE3C170253583E000B0B394 /* InvitationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE3C16F253583E000B0B394 /* InvitationCard.swift */; };
 		ECE3C1752535842600B0B394 /* GreetingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE3C1742535842600B0B394 /* GreetingCard.swift */; };
-		ECE3C17F2535944500B0B394 /* icons8-go_back.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE3C17E2535944500B0B394 /* icons8-go_back.png */; };
 		ECFC3E9A2527611E00748B20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC3E992527611E00748B20 /* AppDelegate.swift */; };
 		ECFC3E9C2527611E00748B20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC3E9B2527611E00748B20 /* SceneDelegate.swift */; };
 		ECFC3E9E2527611E00748B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC3E9D2527611E00748B20 /* ViewController.swift */; };
@@ -56,6 +60,11 @@
 		3F316A6D8F51141F7BA59255 /* Pods_Card_Maker_Card_MakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Card_Maker_Card_MakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		504A32B1B24EC58A20A20D92 /* Pods-Card Maker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Maker.release.xcconfig"; path = "Target Support Files/Pods-Card Maker/Pods-Card Maker.release.xcconfig"; sourceTree = "<group>"; };
 		63CB48F82A1D5B8101083304 /* Pods-Card Maker-Card MakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Maker-Card MakerUITests.release.xcconfig"; path = "Target Support Files/Pods-Card Maker-Card MakerUITests/Pods-Card Maker-Card MakerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		847560FB255D986500F29BD3 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		847B4AA32566B71D00B38703 /* ImageNameArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameArray.swift; sourceTree = "<group>"; };
+		84AF1E192559BF9E00687089 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		84C0E7E7255C23D000154882 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		84C0E7F5255C415C00154882 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		974F97D441DA80EC4EC73DD8 /* Pods-Card MakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card MakerTests.debug.xcconfig"; path = "Target Support Files/Pods-Card MakerTests/Pods-Card MakerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD42D45A82DDDF6591DAFEA1 /* Pods-Card MakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card MakerTests.release.xcconfig"; path = "Target Support Files/Pods-Card MakerTests/Pods-Card MakerTests.release.xcconfig"; sourceTree = "<group>"; };
 		CEDF9F6450D8AFC9DF77FE0A /* Pods-Card Maker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Maker.debug.xcconfig"; path = "Target Support Files/Pods-Card Maker/Pods-Card Maker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,7 +79,6 @@
 		ECDB8FCA2529FEFF0026035C /* TopicScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicScreenViewController.swift; sourceTree = "<group>"; };
 		ECE3C16F253583E000B0B394 /* InvitationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationCard.swift; sourceTree = "<group>"; };
 		ECE3C1742535842600B0B394 /* GreetingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingCard.swift; sourceTree = "<group>"; };
-		ECE3C17E2535944500B0B394 /* icons8-go_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-go_back.png"; path = "../../../../icons8-go_back.png"; sourceTree = "<group>"; };
 		ECFC3E962527611E00748B20 /* Card Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFC3E992527611E00748B20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECFC3E9B2527611E00748B20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				EC5FD0972532C70D00C5CEC0 /* CellModel.swift */,
+				847B4AA32566B71D00B38703 /* ImageNameArray.swift */,
 				ECE3C16F253583E000B0B394 /* InvitationCard.swift */,
 				ECE3C1742535842600B0B394 /* GreetingCard.swift */,
 			);
@@ -159,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				ECFC3E9D2527611E00748B20 /* ViewController.swift */,
+				84C0E7E7255C23D000154882 /* LoginView.swift */,
+				847560FB255D986500F29BD3 /* UserProfileViewController.swift */,
 				ECDB8FCA2529FEFF0026035C /* TopicScreenViewController.swift */,
 				ECA0BE8D25308FE200EE337C /* CardSelectingViewController.swift */,
 			);
@@ -170,6 +181,7 @@
 			children = (
 				ECA0BE8B25307E8300EE337C /* CustomTopicCell.swift */,
 				EC919A602543033300B8C6A8 /* CustomFlowLayout.swift */,
+				84AF1E192559BF9E00687089 /* CardCell.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -187,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				ECFC3E982527611E00748B20 /* Card Maker */,
-				ECFC3EAF2527612200748B20 /* Card MakerTests */,
 				ECFC3EBA2527612200748B20 /* Card MakerUITests */,
 				ECFC3E972527611E00748B20 /* Products */,
 				CDF2A9E8097EF7AA08805120 /* Pods */,
@@ -215,9 +226,10 @@
 				EC5FD0D52533008600C5CEC0 /* Controller */,
 				EC5FD0D7253300B900C5CEC0 /* Extension */,
 				ECFC3EA42527612100748B20 /* LaunchScreen.storyboard */,
-				ECE3C17E2535944500B0B394 /* icons8-go_back.png */,
+				ECFC3EAF2527612200748B20 /* Card MakerTests */,
 				EC5FD0D8253300C800C5CEC0 /* TextFont */,
 				ECFC3EA72527612100748B20 /* Info.plist */,
+				84C0E7F5255C415C00154882 /* GoogleService-Info.plist */,
 				EC5FD0EF253310D300C5CEC0 /* Assets.xcassets */,
 			);
 			path = "Card Maker";
@@ -352,10 +364,10 @@
 			files = (
 				EC5FD09D2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf in Resources */,
 				EC92A4CB2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf in Resources */,
-				ECE3C17F2535944500B0B394 /* icons8-go_back.png in Resources */,
 				ECFC3EA62527612100748B20 /* LaunchScreen.storyboard in Resources */,
 				EC5FD0F0253310D300C5CEC0 /* Assets.xcassets in Resources */,
 				ECFC3EA12527611E00748B20 /* Main.storyboard in Resources */,
+				84C0E7F6255C415C00154882 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +503,11 @@
 				ECFC3E9A2527611E00748B20 /* AppDelegate.swift in Sources */,
 				ECA0BE8E25308FE200EE337C /* CardSelectingViewController.swift in Sources */,
 				EC5FD0982532C70D00C5CEC0 /* CellModel.swift in Sources */,
+				84C0E7E8255C23D000154882 /* LoginView.swift in Sources */,
 				ECFC3E9C2527611E00748B20 /* SceneDelegate.swift in Sources */,
+				847560FC255D986500F29BD3 /* UserProfileViewController.swift in Sources */,
+				847B4AA42566B71D00B38703 /* ImageNameArray.swift in Sources */,
+				84AF1E1A2559BF9E00687089 /* CardCell.swift in Sources */,
 				ECE3C170253583E000B0B394 /* InvitationCard.swift in Sources */,
 				EC919A612543033300B8C6A8 /* CustomFlowLayout.swift in Sources */,
 				ECA0BE8C25307E8300EE337C /* CustomTopicCell.swift in Sources */,
@@ -674,6 +690,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97MV55V5HU;
 				INFOPLIST_FILE = "Card Maker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -693,6 +710,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97MV55V5HU;
 				INFOPLIST_FILE = "Card Maker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

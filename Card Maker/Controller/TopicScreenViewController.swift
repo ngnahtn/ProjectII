@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class TopicScreenViewController: UIViewController {
+    
     
     weak var navigation: UINavigationController?
     let cellID = "cellID"
     
     var invitationTopic = InvitationCard()
     var greetingTopic = GreetingCard()
+    
+    
     
     // stack total
     private lazy var contentStackView: UIStackView = {
@@ -26,15 +30,15 @@ class TopicScreenViewController: UIViewController {
         return stackView
     }()
     
-        private lazy var subStack1: UIStackView = {
-            let subStack = UIStackView()
-            subStack.backgroundColor = .clear
-            subStack.axis = .vertical
-            subStack.distribution = .fill
-            subStack.addArrangedSubview(invitationLable)
-            subStack.addArrangedSubview(invitationCollectionView)
-            subStack.spacing = 10.0
-            return subStack
+    private lazy var subStack1: UIStackView = {
+        let subStack = UIStackView()
+        subStack.backgroundColor = .clear
+        subStack.axis = .vertical
+        subStack.distribution = .fill
+        subStack.addArrangedSubview(invitationLable)
+        subStack.addArrangedSubview(invitationCollectionView)
+        subStack.spacing = 10.0
+        return subStack
     }()
     
     private lazy var subStack2: UIStackView = {
@@ -44,12 +48,12 @@ class TopicScreenViewController: UIViewController {
         subStack1.distribution = .fill
         subStack.addArrangedSubview(greetingLable)
         subStack.addArrangedSubview(greetingCollectionView)
-
+        
         subStack.spacing = 10.0
         return subStack
     }()
-        
-
+    
+    
     private lazy var invitationCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -122,12 +126,28 @@ class TopicScreenViewController: UIViewController {
         return imgView
     }()
     
+    private lazy var userProfileImg: UIImageView = {
+        let img = UIImage(named: "userpro5_img")
+        let iv = UIImageView(image: img)
+        iv.isUserInteractionEnabled = true
+        iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleProfileButton(_ :))))
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFit
+        return iv
+    }()
+    
+    
+    @objc private func handleProfileButton(_ sender: UIButton) {
+        let vc = UserProfileViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
     
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         invitationCollectionView.register(TopicCell.self, forCellWithReuseIdentifier: cellID)
         greetingCollectionView.register(TopicCell.self, forCellWithReuseIdentifier: cellID)
         greetingCollectionView.isPagingEnabled = true
@@ -145,6 +165,7 @@ class TopicScreenViewController: UIViewController {
         headerView.addSubview(appName)
         headerView.addSubview(welcomeImg)
         headerView.addSubview(themeName)
+        
         
         NSLayoutConstraint.activate([
             welcomeImg.leftAnchor.constraint(equalTo: headerView.leftAnchor),
@@ -169,6 +190,16 @@ class TopicScreenViewController: UIViewController {
         self.contentStackView.addArrangedSubview(subStack2)
         
         contentStackView.spacing = 30.0
+        
+        view.addSubview(userProfileImg)
+        NSLayoutConstraint.activate([
+            userProfileImg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            userProfileImg.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            userProfileImg.widthAnchor.constraint(equalToConstant: userProfileImg.frame.width ),
+            userProfileImg.heightAnchor.constraint(equalToConstant: userProfileImg.frame.width)
+            
+        ])
+        
     }
     
     fileprivate func setStackView() {
@@ -205,20 +236,25 @@ extension TopicScreenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! TopicCell
         if collectionView == invitationCollectionView {
-            
             let page = invitationTopic.topic[indexPath.item]
             cell.page = page
-            return cell
         } else {
             let page = greetingTopic.topic[indexPath.item]
             cell.page = page
-            return cell
+            
         }
         
-        
+        return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(CardSelectingViewController(), animated: true)
+        let cv = CardSelectingViewController()
+        if collectionView == self.greetingCollectionView {
+            cv.identyfi = self.greetingTopic.topic[indexPath.item].pageTopicName
+        } else {
+            cv.identyfi = self.invitationTopic.topic[indexPath.item].pageTopicName
+        }
+        self.navigationController?.pushViewController(cv, animated: true)
+        print(cv.identyfi)
     }
 }
 
@@ -228,7 +264,7 @@ extension TopicScreenViewController: UICollectionViewDataSource {
 extension TopicScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == invitationCollectionView {
-        return CGSize(width: invitationCollectionView.frame.width, height: invitationCollectionView.frame.height)
+            return CGSize(width: invitationCollectionView.frame.width, height: invitationCollectionView.frame.height)
         } else {
             return CGSize(width: greetingCollectionView.frame.width, height: greetingCollectionView.frame.height)
         }
@@ -240,5 +276,6 @@ extension TopicScreenViewController: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
+
 
 

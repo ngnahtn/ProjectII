@@ -99,8 +99,9 @@ class ViewController: UIViewController {
     
     // MARK: - target
     @objc private func handleTouchButton(_ sender: UIButton) {
-        let topicScreen = TopicScreenViewController()
-        self.navigationController?.pushViewController(topicScreen, animated: true)
+//        let topicScreen = TopicScreenViewController()
+        let loginScreen = LoginView()
+        self.navigationController?.pushViewController(loginScreen, animated: true)
     }
     
    

@@ -6,12 +6,28 @@
 //  Copyright © 2020 Anh Tuan Ng. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum TopicCatagory {
+    case weddingParty
+    case birthdayParty
+    case christmasParty
+    case congratulation
+    case fatherDay
+    case motherDay
+    case graduation
+}
 
 struct TopicPage {
     
     let pageImage: String
     let pageTopicName: String
-}
+    let topicCatagory: TopicCatagory
+    
+    }
+
+struct imageNameArray {
+    let imageName : String
+    }
 
 

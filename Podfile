@@ -6,8 +6,12 @@ target 'Card Maker' do
   use_frameworks!
 
   # Pods for Card Maker
+
+	pod 'Firebase/Analytics'
+	pod 'Firebase/Core'
+	pod 'Firebase/Database'
+	pod 'Firebase/Storage'
 	pod 'Firebase/Auth'
-	pod 'Firebase/Firestore'
 
   target 'Card MakerTests' do
     inherit! :search_paths
@@ -16,13 +20,6 @@ target 'Card Maker' do
 
   target 'Card MakerUITests' do
     # Pods for testing
-  end
-  post_install do |pi|
-      pi.pods_project.targets.each do |t|
-        t.build_configurations.each do |config|
-          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
-        end
-      end
   end
 
 end
