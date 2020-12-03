@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class TopicCell: UICollectionViewCell {
     weak var navigationController: UINavigationController?
@@ -14,9 +15,21 @@ class TopicCell: UICollectionViewCell {
     var page : TopicPage? {
         didSet {
             guard let unrappedPage = page else { return }
-            topicButton.image = UIImage(named: unrappedPage.pageImage)?.withRenderingMode(.alwaysOriginal)
-            topicLable.text = unrappedPage.pageTopicName
-            topicLable.font = UIFont.init(name: "Palatino", size: 22)
+            let ref = Storage.storage().reference(withPath:  "/CardTopic/\(unrappedPage.pageImage).jpg")
+            ref.getData(maxSize: 4*1024*1024) {[weak self] (data, error) in
+                guard let sefll = self else {return}
+                
+                if let error = error {
+                    print(error)
+                    return
+                }
+                if let data = data {
+                    sefll.topicButton.image = UIImage(data: data)?.withRenderingMode(.alwaysOriginal)
+                    sefll.topicLable.text = unrappedPage.pageTopicName
+                    sefll.topicLable.font = UIFont.init(name: "Palatino", size: 22)
+                }
+            }
+            
         }
     }
     
@@ -30,7 +43,8 @@ class TopicCell: UICollectionViewCell {
         return lable
     }()
     private var topicButton: UIImageView = {
-        let imgView = UIImageView()
+        let img = UIImage(named: "unknows_img")
+        let imgView = UIImageView(image: img)
         imgView.isUserInteractionEnabled = true
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.contentMode = .scaleToFill

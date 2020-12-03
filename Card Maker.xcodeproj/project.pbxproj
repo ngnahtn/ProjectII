@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8437087E2577FC3B00A2ECB0 /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437087D2577FC3B00A2ECB0 /* UserListTableViewController.swift */; };
+		843708862577FE3100A2ECB0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843708852577FE3100A2ECB0 /* User.swift */; };
+		8437089625782BD300A2ECB0 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437089525782BD300A2ECB0 /* MessageViewController.swift */; };
+		8470EFE32573F09700D31C5B /* SelectedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470EFE22573F09700D31C5B /* SelectedCardViewController.swift */; };
+		8470EFF02576B4E900D31C5B /* chrismastSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8470EFEB2576B4E400D31C5B /* chrismastSong.mp3 */; };
+		8470EFF12576B4E900D31C5B /* motherandfatherSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8470EFEC2576B4E500D31C5B /* motherandfatherSong.mp3 */; };
+		8470EFF22576B4E900D31C5B /* graduation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8470EFED2576B4E600D31C5B /* graduation.mp3 */; };
+		8470EFF32576B4E900D31C5B /* weddingSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8470EFEE2576B4E800D31C5B /* weddingSong.mp3 */; };
+		8470EFF42576B4E900D31C5B /* birthdayAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8470EFEF2576B4E900D31C5B /* birthdayAudio.mp3 */; };
 		847560FC255D986500F29BD3 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847560FB255D986500F29BD3 /* UserProfileViewController.swift */; };
 		847B4AA42566B71D00B38703 /* ImageNameArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B4AA32566B71D00B38703 /* ImageNameArray.swift */; };
 		84AF1E1A2559BF9E00687089 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF1E192559BF9E00687089 /* CardCell.swift */; };
@@ -60,6 +69,15 @@
 		3F316A6D8F51141F7BA59255 /* Pods_Card_Maker_Card_MakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Card_Maker_Card_MakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		504A32B1B24EC58A20A20D92 /* Pods-Card Maker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Maker.release.xcconfig"; path = "Target Support Files/Pods-Card Maker/Pods-Card Maker.release.xcconfig"; sourceTree = "<group>"; };
 		63CB48F82A1D5B8101083304 /* Pods-Card Maker-Card MakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Maker-Card MakerUITests.release.xcconfig"; path = "Target Support Files/Pods-Card Maker-Card MakerUITests/Pods-Card Maker-Card MakerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8437087D2577FC3B00A2ECB0 /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
+		843708852577FE3100A2ECB0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8437089525782BD300A2ECB0 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		8470EFE22573F09700D31C5B /* SelectedCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCardViewController.swift; sourceTree = "<group>"; };
+		8470EFEB2576B4E400D31C5B /* chrismastSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chrismastSong.mp3; sourceTree = "<group>"; };
+		8470EFEC2576B4E500D31C5B /* motherandfatherSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = motherandfatherSong.mp3; sourceTree = "<group>"; };
+		8470EFED2576B4E600D31C5B /* graduation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = graduation.mp3; sourceTree = "<group>"; };
+		8470EFEE2576B4E800D31C5B /* weddingSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = weddingSong.mp3; sourceTree = "<group>"; };
+		8470EFEF2576B4E900D31C5B /* birthdayAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = birthdayAudio.mp3; sourceTree = "<group>"; };
 		847560FB255D986500F29BD3 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		847B4AA32566B71D00B38703 /* ImageNameArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameArray.swift; sourceTree = "<group>"; };
 		84AF1E192559BF9E00687089 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
@@ -160,6 +178,7 @@
 				847B4AA32566B71D00B38703 /* ImageNameArray.swift */,
 				ECE3C16F253583E000B0B394 /* InvitationCard.swift */,
 				ECE3C1742535842600B0B394 /* GreetingCard.swift */,
+				843708852577FE3100A2ECB0 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +191,9 @@
 				847560FB255D986500F29BD3 /* UserProfileViewController.swift */,
 				ECDB8FCA2529FEFF0026035C /* TopicScreenViewController.swift */,
 				ECA0BE8D25308FE200EE337C /* CardSelectingViewController.swift */,
+				8470EFE22573F09700D31C5B /* SelectedCardViewController.swift */,
+				8437087D2577FC3B00A2ECB0 /* UserListTableViewController.swift */,
+				8437089525782BD300A2ECB0 /* MessageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,6 +248,11 @@
 				EC5FD0D52533008600C5CEC0 /* Controller */,
 				EC5FD0D7253300B900C5CEC0 /* Extension */,
 				ECFC3EA42527612100748B20 /* LaunchScreen.storyboard */,
+				8470EFEF2576B4E900D31C5B /* birthdayAudio.mp3 */,
+				8470EFEB2576B4E400D31C5B /* chrismastSong.mp3 */,
+				8470EFEC2576B4E500D31C5B /* motherandfatherSong.mp3 */,
+				8470EFED2576B4E600D31C5B /* graduation.mp3 */,
+				8470EFEE2576B4E800D31C5B /* weddingSong.mp3 */,
 				ECFC3EAF2527612200748B20 /* Card MakerTests */,
 				EC5FD0D8253300C800C5CEC0 /* TextFont */,
 				ECFC3EA72527612100748B20 /* Info.plist */,
@@ -362,9 +389,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8470EFF42576B4E900D31C5B /* birthdayAudio.mp3 in Resources */,
 				EC5FD09D2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf in Resources */,
 				EC92A4CB2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf in Resources */,
+				8470EFF12576B4E900D31C5B /* motherandfatherSong.mp3 in Resources */,
+				8470EFF02576B4E900D31C5B /* chrismastSong.mp3 in Resources */,
+				8470EFF22576B4E900D31C5B /* graduation.mp3 in Resources */,
 				ECFC3EA62527612100748B20 /* LaunchScreen.storyboard in Resources */,
+				8470EFF32576B4E900D31C5B /* weddingSong.mp3 in Resources */,
 				EC5FD0F0253310D300C5CEC0 /* Assets.xcassets in Resources */,
 				ECFC3EA12527611E00748B20 /* Main.storyboard in Resources */,
 				84C0E7F6255C415C00154882 /* GoogleService-Info.plist in Resources */,
@@ -497,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8470EFE32573F09700D31C5B /* SelectedCardViewController.swift in Sources */,
 				ECDB8FCB2529FEFF0026035C /* TopicScreenViewController.swift in Sources */,
 				ECE3C1752535842600B0B394 /* GreetingCard.swift in Sources */,
 				ECFC3E9E2527611E00748B20 /* ViewController.swift in Sources */,
@@ -506,7 +539,10 @@
 				84C0E7E8255C23D000154882 /* LoginView.swift in Sources */,
 				ECFC3E9C2527611E00748B20 /* SceneDelegate.swift in Sources */,
 				847560FC255D986500F29BD3 /* UserProfileViewController.swift in Sources */,
+				8437089625782BD300A2ECB0 /* MessageViewController.swift in Sources */,
 				847B4AA42566B71D00B38703 /* ImageNameArray.swift in Sources */,
+				843708862577FE3100A2ECB0 /* User.swift in Sources */,
+				8437087E2577FC3B00A2ECB0 /* UserListTableViewController.swift in Sources */,
 				84AF1E1A2559BF9E00687089 /* CardCell.swift in Sources */,
 				ECE3C170253583E000B0B394 /* InvitationCard.swift in Sources */,
 				EC919A612543033300B8C6A8 /* CustomFlowLayout.swift in Sources */,

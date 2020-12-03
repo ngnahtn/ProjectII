@@ -10,9 +10,9 @@ import Foundation
 
 class InvitationCard {
     let topic = [
-        TopicPage(pageImage: "wedding_img", pageTopicName: "WeddingParty", topicCatagory: .weddingParty ),
-        TopicPage(pageImage: "birthday_img", pageTopicName: "BirthdayParty", topicCatagory: .birthdayParty),
-        TopicPage(pageImage: "chirstmas_img", pageTopicName: "ChristmasParty", topicCatagory: .christmasParty)
+        TopicPage(pageImage: "wedding_img", pageTopicName: "WeddingParty", topicCatagory: .weddingParty, topicMusicName: "weddingSong" ),
+        TopicPage(pageImage: "birthday_img", pageTopicName: "BirthdayParty", topicCatagory: .birthdayParty, topicMusicName: "birthdayAudio"),
+        TopicPage(pageImage: "christmas_img", pageTopicName: "ChristmasParty", topicCatagory: .christmasParty, topicMusicName: "chrismastSong")
     ]
     
 }

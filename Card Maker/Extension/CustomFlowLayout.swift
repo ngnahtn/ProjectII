@@ -28,7 +28,7 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
         }
         self.attributeArray.removeAllObjects()
         let numberOfCollum = delegate?.getNumberOfCollum()
-        let padding : CGFloat = 35.0
+        let padding : CGFloat = 30.0
         let collectionViewWidth : CGFloat =  collectionView.frame.size.width
         let itemWidth = (collectionViewWidth - padding * CGFloat(numberOfCollum! + 1))/CGFloat(numberOfCollum!)
         var collumArray = [CGFloat](repeating: 0.0, count: numberOfCollum!)

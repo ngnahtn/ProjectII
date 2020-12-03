@@ -8,8 +8,18 @@
 
 import UIKit
 
-class CardSelectingViewController: UIViewController {
+class CardSelectingViewController: UIViewController, GetImage {
+    
+    
+    func fetchImage(image: UIImage?) {
+        let cv = SelectedCardViewController()
+        cv.image.image = image!
+        cv.musicStringName = self.musicName
+        self.navigationController?.pushViewController(cv, animated: true)
+    }
+    
     weak var navigation: UINavigationController?
+    var musicName = ""
     var identyfi : String = ""
     let cellID = "CellID"
     let customCell = CardCell()
@@ -144,36 +154,36 @@ extension CardSelectingViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CardCell
-        
+        cell.delegate = self
         switch identyfi {
         case "Graduation":
             let cardsImageName = graduationImageNameArray.imageName[indexPath.item]
             cell.cardsImage = cardsImageName
-            cell.identify = "Graduation"
+            
         case "Father'sDay":
             let cardsImageName = fatherDayImageNameArray.imageName[indexPath.item]
             cell.cardsImage = cardsImageName
-            cell.identify = identyfi
+            
 
         case "Mother'sDay":
             let cardsImageName = motherDayImageNameArray.imageName[indexPath.item]
             cell.cardsImage = cardsImageName
-            cell.identify = identyfi
+            
 
         case "WeddingParty":
             let cardsImageName = weddingImageNameArray.imageName[indexPath.item]
             cell.cardsImage = cardsImageName
-            cell.identify = identyfi
+            
 
         case "BirthdayParty":
             let cardsImageName = birthdayImageNameArray.imageName[indexPath.item]
             cell.cardsImage = cardsImageName
-            cell.identify = identyfi
+            
 
         case "ChristmasParty":
             let cardsImageName = christmasImageNameArray.imageName[indexPath.item]
             cell.cardsImage = cardsImageName
-            cell.identify = identyfi
+            
 
         default:
             print("error")
@@ -182,13 +192,44 @@ extension CardSelectingViewController: UICollectionViewDataSource{
         return cell
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cv = SelectedCardViewController()
+//        switch identyfi {
+//        case "Graduation":
+//            cv.imageName = birthdayImageNameArray.imageName[indexPath.item].imageName
+//
+//        case "Father'sDay":
+//            cv.imageName = fatherDayImageNameArray.imageName[indexPath.item].imageName
+//
+//        case "Mother'sDay":
+//            cv.imageName = motherDayImageNameArray.imageName[indexPath.item].imageName
+//
+//        case "WeddingParty":
+//            cv.imageName = weddingImageNameArray.imageName[indexPath.item].imageName
+//
+//        case "BirthdayParty":
+//            cv.imageName = birthdayImageNameArray.imageName[indexPath.item].imageName
+//
+//
+//        case "ChristmasParty":
+//            cv.imageName = christmasImageNameArray.imageName[indexPath.item].imageName
+//
+//
+//        default:
+//            print("error")
+//        }
+//        print(cv.imageName)
+//        self.navigationController?.pushViewController(cv, animated: true)
+//    }
+    
     
 }
 // MARK: - CustomFlowLayoutDelegate
 extension CardSelectingViewController: CustomFlowLayoutDelegate {
     func collectionView(collectionView: UICollectionView, itemWidth: CGFloat, heightForIndexPath indexPath: NSIndexPath) -> CGFloat {
         return (cardSellectingView.frame.width)/3
-    }
+//        return CGFloat(customCell.cardImage.frame.size.height)
+        }
     
     func getNumberOfCollum() -> Int {
         return 2

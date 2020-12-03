@@ -10,8 +10,8 @@ import Foundation
 
 class GreetingCard {
      let topic = [
-        TopicPage(pageImage: "graduation_img", pageTopicName: "Graduation", topicCatagory: .graduation),
-        TopicPage(pageImage: "fatherday_img", pageTopicName: "Father'sDay", topicCatagory: .fatherDay),
-        TopicPage(pageImage: "motherday_img", pageTopicName: "Mother'sDay", topicCatagory: .motherDay)
+        TopicPage(pageImage: "graduation_img", pageTopicName: "Graduation", topicCatagory: .graduation, topicMusicName: "graduation"),
+        TopicPage(pageImage: "fatherday_img", pageTopicName: "Father'sDay", topicCatagory: .fatherDay, topicMusicName: "motherandfatherSong"),
+        TopicPage(pageImage: "motherday_img", pageTopicName: "Mother'sDay", topicCatagory: .motherDay, topicMusicName: "motherandfatherSong")
     ]
 }

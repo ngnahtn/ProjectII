@@ -1,0 +1,6 @@
+framework module Pods_Card_Maker_Card_MakerUITests {
+  umbrella header "Pods-Card Maker-Card MakerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

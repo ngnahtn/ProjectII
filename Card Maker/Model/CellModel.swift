@@ -23,6 +23,7 @@ struct TopicPage {
     let pageImage: String
     let pageTopicName: String
     let topicCatagory: TopicCatagory
+    let topicMusicName: String
     
     }
 

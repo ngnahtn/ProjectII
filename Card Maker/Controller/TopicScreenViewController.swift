@@ -250,9 +250,12 @@ extension TopicScreenViewController: UICollectionViewDataSource {
         let cv = CardSelectingViewController()
         if collectionView == self.greetingCollectionView {
             cv.identyfi = self.greetingTopic.topic[indexPath.item].pageTopicName
+            cv.musicName = self.greetingTopic.topic[indexPath.item].topicMusicName
         } else {
             cv.identyfi = self.invitationTopic.topic[indexPath.item].pageTopicName
+            cv.musicName = self.invitationTopic.topic[indexPath.item].topicMusicName
         }
+        
         self.navigationController?.pushViewController(cv, animated: true)
         print(cv.identyfi)
     }
