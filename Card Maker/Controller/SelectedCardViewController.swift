@@ -54,6 +54,7 @@ class SelectedCardViewController: UIViewController {
     }()
     @objc func handleSendButton(_ sender: UIButton) {
         let cv = UserListTableViewController()
+        cv.audioStringName = musicStringName
         cv.selectedImage = self.image
         self.navigationController?.pushViewController(cv, animated: true)
     }

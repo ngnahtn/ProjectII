@@ -9,7 +9,6 @@
 import UIKit
 
 class MessageViewController: UIViewController {
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -17,6 +16,7 @@ class MessageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
         // Do any additional setup after loading the view.
     }
     override func viewWillDisappear(_ animated: Bool) {

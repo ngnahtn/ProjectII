@@ -342,7 +342,6 @@ class LoginView: UIViewController {
                 print(error!)
                 return
             }
-            
             let ref = Database.database().reference(fromURL:"https://cardmakeroffice.firebaseio.com/")
             let userRef = ref.child("user").child(result!.user.uid)
             let value = ["name": name, "email": email]

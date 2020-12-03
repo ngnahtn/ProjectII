@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseAuth
 import Firebase
 
 class UserListTableViewController: UITableViewController {
     var users = [User]()
+    var audioStringName = ""
     var selectedImage = UIImageView()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -54,7 +57,13 @@ class UserListTableViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let userID = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let toUserEmail = users[indexPath.row].email
+        let toUser = users[indexPath.row].name
         let imageUUID = UUID().uuidString
+        let audioName = audioStringName
         let imgRef = Storage.storage().reference(withPath: "/CardSelected/\(imageUUID).jpg")
         guard let imgData = selectedImage.image?.jpegData(compressionQuality: 0.75) else { return }
         let updateMetaData = StorageMetadata.init()
@@ -64,6 +73,11 @@ class UserListTableViewController: UITableViewController {
             if let error = error {
                 print(error)
             } else {
+                imgRef.downloadURL { (url, Error) in
+                    let value = ["userID": userID, "toUserEmail" : toUserEmail, "toUserName": toUser, "audioName": audioName, "cardImageURL": url?.absoluteString] as [String: AnyObject]
+                    createSelectedCardDatabase(value: value)
+
+                }
                 print("bo may load xong roi")
             }
         }
@@ -72,8 +86,18 @@ class UserListTableViewController: UITableViewController {
         navigationController?.pushViewController(cv, animated: true)
     }
 }
-private func fetchImagewithURL(urlString: URL) {
-    
+private func createSelectedCardDatabase(value: [String: AnyObject]) {
+    let cardID = UUID().uuidString
+    let ref = Database.database().reference(fromURL:"https://cardmakeroffice.firebaseio.com/")
+    let userRef = ref.child("SelectedCard").child(cardID)
+//    let value = ["name": name, "email": email]
+    userRef.updateChildValues(value) { (err, ref) in
+        if err != nil {
+        print(err!)
+        return
+        }
+        print("Update CardDatabase Successfully")
+    }
 }
 
 class UserCell: UITableViewCell {
