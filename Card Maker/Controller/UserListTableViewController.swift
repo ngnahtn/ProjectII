@@ -32,6 +32,7 @@ class UserListTableViewController: UITableViewController {
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 
                 let user = User()
+                user.userID = snapshot.key
                 user.name = dictionary["name"] as? String
                 user.email = dictionary["email"] as? String
                 self.users.append(user)
@@ -53,52 +54,26 @@ class UserListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! UserCell
         let user  = users[indexPath.row]
         cell.textLabel?.text = user.name
+        cell.textLabel?.font = cell.textLabel?.font.withSize(20)
         cell.detailTextLabel?.text = user.email
+        cell.detailTextLabel?.font = cell.detailTextLabel?.font.withSize(14)
         return cell
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let userID = Auth.auth().currentUser?.uid else {
-            return
-        }
-        let toUserEmail = users[indexPath.row].email
-        let toUser = users[indexPath.row].name
-        let imageUUID = UUID().uuidString
-        let audioName = audioStringName
-        let imgRef = Storage.storage().reference(withPath: "/CardSelected/\(imageUUID).jpg")
-        guard let imgData = selectedImage.image?.jpegData(compressionQuality: 0.75) else { return }
-        let updateMetaData = StorageMetadata.init()
-        updateMetaData.contentType = " image/jpeg"
-
-        imgRef.putData(imgData, metadata: updateMetaData) { (downloadMetadata, error) in
-            if let error = error {
-                print(error)
-            } else {
-                imgRef.downloadURL { (url, Error) in
-                    let value = ["userID": userID, "toUserEmail" : toUserEmail, "toUserName": toUser, "audioName": audioName, "cardImageURL": url?.absoluteString] as [String: AnyObject]
-                    createSelectedCardDatabase(value: value)
-
-                }
-                print("bo may load xong roi")
-            }
-        }
+        
 //        Database.database()
-        let cv = MessageViewController()
-        navigationController?.pushViewController(cv, animated: true)
+        let cv = MessageViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let user = users[indexPath.row]
+        cv.user = user
+        cv.audioStringName = self.audioStringName
+        cv.selectedImage = self.selectedImage
+        self.navigationController?.pushViewController(cv, animated: true)
     }
 }
-private func createSelectedCardDatabase(value: [String: AnyObject]) {
-    let cardID = UUID().uuidString
-    let ref = Database.database().reference(fromURL:"https://cardmakeroffice.firebaseio.com/")
-    let userRef = ref.child("SelectedCard").child(cardID)
-//    let value = ["name": name, "email": email]
-    userRef.updateChildValues(value) { (err, ref) in
-        if err != nil {
-        print(err!)
-        return
-        }
-        print("Update CardDatabase Successfully")
-    }
-}
+
 
 class UserCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

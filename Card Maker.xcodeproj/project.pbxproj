@@ -18,9 +18,11 @@
 		8470EFF42576B4E900D31C5B /* birthdayAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8470EFEF2576B4E900D31C5B /* birthdayAudio.mp3 */; };
 		847560FC255D986500F29BD3 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847560FB255D986500F29BD3 /* UserProfileViewController.swift */; };
 		847B4AA42566B71D00B38703 /* ImageNameArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B4AA32566B71D00B38703 /* ImageNameArray.swift */; };
+		84A8F953257D812400A27EB9 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8F952257D812400A27EB9 /* CustomMessageCell.swift */; };
 		84AF1E1A2559BF9E00687089 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF1E192559BF9E00687089 /* CardCell.swift */; };
 		84C0E7E8255C23D000154882 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0E7E7255C23D000154882 /* LoginView.swift */; };
 		84C0E7F6255C415C00154882 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C0E7F5255C415C00154882 /* GoogleService-Info.plist */; };
+		84C5B6BF257AED680093785E /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5B6BE257AED680093785E /* CardModel.swift */; };
 		B4D44F10DA14A362D90D8982 /* Pods_Card_MakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B83663A8BD2BF9987F44E75 /* Pods_Card_MakerTests.framework */; };
 		DDA90B2B0C6477BD196F9595 /* Pods_Card_Maker_Card_MakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F316A6D8F51141F7BA59255 /* Pods_Card_Maker_Card_MakerUITests.framework */; };
 		EC5FD0982532C70D00C5CEC0 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5FD0972532C70D00C5CEC0 /* CellModel.swift */; };
@@ -80,9 +82,11 @@
 		8470EFEF2576B4E900D31C5B /* birthdayAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = birthdayAudio.mp3; sourceTree = "<group>"; };
 		847560FB255D986500F29BD3 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		847B4AA32566B71D00B38703 /* ImageNameArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameArray.swift; sourceTree = "<group>"; };
+		84A8F952257D812400A27EB9 /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
 		84AF1E192559BF9E00687089 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		84C0E7E7255C23D000154882 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		84C0E7F5255C415C00154882 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84C5B6BE257AED680093785E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		974F97D441DA80EC4EC73DD8 /* Pods-Card MakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card MakerTests.debug.xcconfig"; path = "Target Support Files/Pods-Card MakerTests/Pods-Card MakerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD42D45A82DDDF6591DAFEA1 /* Pods-Card MakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card MakerTests.release.xcconfig"; path = "Target Support Files/Pods-Card MakerTests/Pods-Card MakerTests.release.xcconfig"; sourceTree = "<group>"; };
 		CEDF9F6450D8AFC9DF77FE0A /* Pods-Card Maker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Maker.debug.xcconfig"; path = "Target Support Files/Pods-Card Maker/Pods-Card Maker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 				ECE3C16F253583E000B0B394 /* InvitationCard.swift */,
 				ECE3C1742535842600B0B394 /* GreetingCard.swift */,
 				843708852577FE3100A2ECB0 /* User.swift */,
+				84C5B6BE257AED680093785E /* CardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				ECA0BE8B25307E8300EE337C /* CustomTopicCell.swift */,
 				EC919A602543033300B8C6A8 /* CustomFlowLayout.swift */,
 				84AF1E192559BF9E00687089 /* CardCell.swift */,
+				84A8F952257D812400A27EB9 /* CustomMessageCell.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -534,6 +540,8 @@
 				ECE3C1752535842600B0B394 /* GreetingCard.swift in Sources */,
 				ECFC3E9E2527611E00748B20 /* ViewController.swift in Sources */,
 				ECFC3E9A2527611E00748B20 /* AppDelegate.swift in Sources */,
+				84C5B6BF257AED680093785E /* CardModel.swift in Sources */,
+				84A8F953257D812400A27EB9 /* CustomMessageCell.swift in Sources */,
 				ECA0BE8E25308FE200EE337C /* CardSelectingViewController.swift in Sources */,
 				EC5FD0982532C70D00C5CEC0 /* CellModel.swift in Sources */,
 				84C0E7E8255C23D000154882 /* LoginView.swift in Sources */,

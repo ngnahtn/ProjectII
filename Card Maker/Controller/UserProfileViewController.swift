@@ -11,8 +11,38 @@ import Firebase
 
 class UserProfileViewController: UIViewController {
     weak var navigation: UINavigationController?
-    
-    
+    var cardDictionary = [String: Card]()
+    var cards = [Card]()
+    var cellID = "cellID"
+    private lazy var messageTableView: UITableView = {
+       var tableView = UITableView()
+        tableView.backgroundColor = .clear
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
+    private lazy var messageLable: UILabel = {
+        var lable = UILabel()
+        lable.backgroundColor = .clear
+        lable.translatesAutoresizingMaskIntoConstraints = false
+        lable.text = "Message"
+        lable.textColor = .black
+        lable.font = UIFont.boldSystemFont(ofSize: 24)
+        return lable
+    }()
+    private lazy var profileSeparatorView : UIView = {
+        let vieww = UIView()
+        vieww.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
+        vieww.translatesAutoresizingMaskIntoConstraints = false
+        return vieww
+    }()
+    private lazy var buttonSeparatorView: UIView = {
+        let vieww = UIView()
+        vieww.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
+        vieww.translatesAutoresizingMaskIntoConstraints = false
+        return vieww
+    }()
     private lazy var backButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Back", for: .normal)
@@ -99,9 +129,11 @@ class UserProfileViewController: UIViewController {
         getUserInfor()
         super.viewDidLoad()
         view.backgroundColor = .white
-        setTheView()
+        messageTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         setProfileStackView()
         setButtonStackView()
+        setTableView()
+        observeUserMessages()
         
     }
     
@@ -129,9 +161,10 @@ class UserProfileViewController: UIViewController {
     }
     
     func setProfileStackView() {
+
         view.addSubview(userProfileStackView)
         NSLayoutConstraint.activate([
-            userProfileStackView.topAnchor.constraint(equalTo: headerView.bottomAnchor,constant: 12),
+            userProfileStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             userProfileStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -12),
             userProfileStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12),
             userProfileStackView.heightAnchor.constraint(equalToConstant: 120)
@@ -152,10 +185,17 @@ class UserProfileViewController: UIViewController {
         
         self.userProfileStackView.addArrangedSubview(stack1)
         self.userProfileStackView.addArrangedSubview(stack2)
+        
+        view.addSubview(profileSeparatorView)
+        NSLayoutConstraint.activate([
+            profileSeparatorView.topAnchor.constraint(equalTo: userProfileStackView.bottomAnchor, constant: 0),
+            profileSeparatorView.leadingAnchor.constraint(equalTo: userProfileStackView.leadingAnchor),
+            profileSeparatorView.widthAnchor.constraint(equalTo: userProfileStackView.widthAnchor),
+            profileSeparatorView.heightAnchor.constraint(equalToConstant: 1)
+        ])
         }
     
     func setButtonStackView() {
-        
         let buttonStackView = UIStackView(arrangedSubviews: [backButton,logoutButton])
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         buttonStackView.backgroundColor = .clear
@@ -170,10 +210,86 @@ class UserProfileViewController: UIViewController {
             buttonStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12),
             buttonStackView.heightAnchor.constraint(equalToConstant: 50)
         ])
+        view.addSubview(buttonSeparatorView)
+        NSLayoutConstraint.activate([
+            buttonSeparatorView.topAnchor.constraint(equalTo: buttonStackView.topAnchor, constant: -10),
+            buttonSeparatorView.leadingAnchor.constraint(equalTo: buttonStackView.leadingAnchor),
+            buttonSeparatorView.widthAnchor.constraint(equalTo: buttonStackView.widthAnchor),
+            buttonSeparatorView.heightAnchor.constraint(equalToConstant: 1)
+        ])
         
     }
+    private func setTableView() {
+        let stackView = UIStackView(arrangedSubviews: [messageLable,messageTableView])
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .fill
+        stackView.spacing = 10
+        view.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: profileSeparatorView.bottomAnchor,constant: 30),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -12),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 12),
+            stackView.bottomAnchor.constraint(equalTo: buttonSeparatorView.topAnchor,constant: -10)
+        ])
+    }
+    private func observeUserMessages() {
+        guard let userID = Auth.auth().currentUser?.uid else {return}
+        let ref = Database.database().reference().child("userMessages").child(userID)
+        ref.observe(.childAdded, with: { (snapshot) in
+            let messageID = snapshot.key
+            let messagesRef = Database.database().reference().child("SelectedCard").child(messageID)
+            messagesRef.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+                guard let `self` = self else {return}
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    let card = Card()
+
+                    card.userID = dictionary["userID"] as? String
+                    card.toUserID = dictionary["toUserID"] as? String
+                    card.audioNameString = dictionary["audioName"] as? String
+                    card.imageURL = dictionary["cardImageURL"] as? String
+    //                self.cards.append(card)
+                    
+                    if let toID = card.toUserID {
+                        self.cardDictionary[toID] = card
+                        self.cards = Array(self.cardDictionary.values)
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.messageTableView.reloadData()
+                    }
+                }
+            }, withCancel: nil)
+        }, withCancel: nil)
+    }
+//    private func observeCard() {
+//        let ref = Database.database().reference().child("SelectedCard")
+//        ref.observe(.childAdded, with: { [weak self] (snapshot) in
+//            guard let `self` = self else {return}
+//            if let dictionary = snapshot.value as? [String: AnyObject] {
+//                let card = Card()
+//
+//                card.userID = dictionary["userID"] as? String
+//                card.toUserID = dictionary["toUserID"] as? String
+//                card.audioNameString = dictionary["audioName"] as? String
+//                card.imageURL = dictionary["cardImageURL"] as? String
+////                self.cards.append(card)
+//
+//                if let toID = card.toUserID {
+//                    self.cardDictionary[toID] = card
+//                    self.cards = Array(self.cardDictionary.values)
+//                }
+//
+//                DispatchQueue.main.async {
+//                    self.messageTableView.reloadData()
+//                }
+//            }
+//        }, withCancel: nil)
+//    }
+    
     
     @objc func handleBackButton(_ sender: UIButton) {
+        print(cards)
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -186,14 +302,62 @@ class UserProfileViewController: UIViewController {
         
         let vc = LoginView()
         self.navigationController?.pushViewController(vc, animated: true)
-    }/*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+}
 
+extension UserProfileViewController: UITableViewDelegate {
+    
+}
+
+extension UserProfileViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cards.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
+        let card = cards[indexPath.row]
+        let chatPartnerID : String?
+        if card.userID == Auth.auth().currentUser?.uid {
+            chatPartnerID = card.toUserID
+        } else {
+            chatPartnerID = card.userID
+        }
+        if let id = chatPartnerID {
+            let ref = Database.database().reference().child("user").child(id)
+            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dictionary  = snapshot.value as? [String: AnyObject] {
+                    cell.textLabel?.text = dictionary["email"] as? String
+                    guard let userName = dictionary["name"] as? String else {return}
+                    cell.detailTextLabel?.text = "\(userName) have sent you a card"
+                    cell.textLabel?.font = cell.textLabel?.font.withSize(20)
+                    cell.detailTextLabel?.font = cell.detailTextLabel?.font.withSize(14)
+                }
+            }, withCancel: nil)
+        }
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let card = cards[indexPath.row]
+        guard let chatPartnerID = card.chatPartnerID() else {return}
+//        print(chatPartnerID)
+        let ref = Database.database().reference().child("user").child(chatPartnerID)
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//            print(snapshot)
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {return}
+            let user = User()
+            user.userID = chatPartnerID
+            user.email = dictionary["email"] as? String
+            user.name = dictionary["name"] as? String
+            let cv = MessageViewController(collectionViewLayout: UICollectionViewFlowLayout())
+            cv.user = user
+            self.navigationController?.pushViewController(cv, animated: true)
+        }, withCancel: nil)
+    }
+    
 }
