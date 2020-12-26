@@ -53,6 +53,7 @@ class LoginView: UIViewController {
     
     private lazy var emailField : UITextField = {
         let tf = UITextField()
+        tf.text = "test1@gmail.com"
         tf.attributedPlaceholder = NSAttributedString(string: "exams@gmail.com",
                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)])
         tf.textColor = .white
@@ -69,6 +70,7 @@ class LoginView: UIViewController {
     
     private lazy var passwordField : UITextField = {
         let tf = UITextField()
+        tf.text = "123456"
         tf.attributedPlaceholder = NSAttributedString(string: "Password",
                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)])
         tf.textColor = .white
@@ -175,11 +177,16 @@ class LoginView: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.148111701, green: 0.1289984584, blue: 0.1116550639, alpha: 1)
         view.addSubview(textView)
         
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleView)))
         setheaderContraint()
         setTextFieldConstraint()
         setButtonConstraint()
         setSegment()
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func handleView() {
+        [self.emailField, self.passwordField, self.nameField].forEach { $0.resignFirstResponder() }
     }
     
     func setheaderContraint() {

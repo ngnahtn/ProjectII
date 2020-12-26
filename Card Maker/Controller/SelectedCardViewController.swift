@@ -39,6 +39,8 @@ class SelectedCardViewController: UIViewController {
                 player.prepareToPlay()
 //                player.numberOfLoops = -1
                 player.play()
+        print(image.frame.size.height)
+        print(image.frame.size.width)
                 
     }
     private lazy var sendButton: UIButton = {

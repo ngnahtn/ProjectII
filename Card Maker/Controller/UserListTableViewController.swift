@@ -22,7 +22,8 @@ class UserListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "User List"
+        self.navigationItem.title = "Friends List"
+        tableView.backgroundColor = .white
         tableView.register(UserCell.self, forCellReuseIdentifier: "cellID")
         fetchUser()
     }
@@ -53,10 +54,14 @@ class UserListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! UserCell
         let user  = users[indexPath.row]
-        cell.textLabel?.text = user.name
-        cell.textLabel?.font = cell.textLabel?.font.withSize(20)
-        cell.detailTextLabel?.text = user.email
-        cell.detailTextLabel?.font = cell.detailTextLabel?.font.withSize(14)
+//        cell.textLabel?.text = user.name
+//        cell.textLabel?.font = cell.textLabel?.font.withSize(20)
+//        cell.detailTextLabel?.text = user.email
+//        cell.detailTextLabel?.font = cell.detailTextLabel?.font.withSize(14)
+//        cell.backgroundColor = .white
+//        cell.textLabel?.textColor = .black
+//        cell.detailTextLabel?.textColor = .black
+        cell.user = user
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -65,7 +70,7 @@ class UserListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
 //        Database.database()
-        let cv = MessageViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let cv = MessageViewController()
         let user = users[indexPath.row]
         cv.user = user
         cv.audioStringName = self.audioStringName
@@ -75,13 +80,5 @@ class UserListTableViewController: UITableViewController {
 }
 
 
-class UserCell: UITableViewCell {
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+
     

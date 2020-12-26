@@ -143,8 +143,23 @@ class TopicScreenViewController: UIViewController {
         
         
     }
+    private lazy var notifyImg: UIImageView = {
+        let img = UIImage(named: "notify_img")
+        let iv = UIImageView(image: img)
+        iv.isUserInteractionEnabled = true
+        iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleNotifyButton(_ :))))
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFit
+        return iv
+    }()
     
-    
+    @objc private func handleNotifyButton(_ sender: UIButton) {
+        let vc = UserNotifyViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
+
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,9 +209,17 @@ class TopicScreenViewController: UIViewController {
         view.addSubview(userProfileImg)
         NSLayoutConstraint.activate([
             userProfileImg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            userProfileImg.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            userProfileImg.widthAnchor.constraint(equalToConstant: userProfileImg.frame.width ),
-            userProfileImg.heightAnchor.constraint(equalToConstant: userProfileImg.frame.width)
+            userProfileImg.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 8),
+            userProfileImg.widthAnchor.constraint(equalToConstant: 50 ),
+            userProfileImg.heightAnchor.constraint(equalToConstant: 50)
+            
+        ])
+        view.addSubview(notifyImg)
+        NSLayoutConstraint.activate([
+            notifyImg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            notifyImg.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant:  -8),
+            notifyImg.widthAnchor.constraint(equalToConstant: 50 ),
+            notifyImg.heightAnchor.constraint(equalToConstant: 50)
             
         ])
         

@@ -10,22 +10,27 @@ import UIKit
 import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
-class MessageViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
+
+class MessageViewController: UIViewController {
+
+    var blueColorCustomer = UIColor(red: 0, green: 137, blue: 249)
+    var greyColorCustomer = UIColor(red: 240, green: 240, blue: 240)
     var audioStringName = ""
     var cards = [Card]()
     var selectedImage : UIImageView?
     var user : User? {
         didSet {
+
             self.navigationItem.title = user?.name
             observeCardImage()
         }
     }
     
     private func observeCardImage() {
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        let userMessagesRef = Database.database().reference().child("userMessages").child(uid)
-            userMessagesRef.observe(.childAdded, with: { [weak self] (snapshot) in
-                guard let `self` = self else {return}
+        guard let uid = Auth.auth().currentUser?.uid, let toID = user?.userID else {return}
+        let userMessagesRef = Database.database().reference().child("userMessages").child(uid).child(toID)
+        userMessagesRef.observe(.childAdded, with: { [weak self] (snapshot) in
+            guard let `self` = self else {return}
             let cardID = snapshot.key
             let messageRef = Database.database().reference().child("SelectedCard").child(cardID)
             messageRef.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -39,7 +44,9 @@ class MessageViewController: UICollectionViewController,UICollectionViewDelegate
                 if card.chatPartnerID() == self.user?.userID {
                     self.cards.append(card)
                     DispatchQueue.main.async {
-                        self.collectionView.reloadData()
+                        self.messageCollectionView.reloadData()
+                        let indexPath = NSIndexPath(item: self.cards.count - 1, section: 0)
+                        self.messageCollectionView.scrollToItem(at: indexPath as IndexPath, at: .bottom, animated: true)
                     }
                 }
                 
@@ -47,6 +54,23 @@ class MessageViewController: UICollectionViewController,UICollectionViewDelegate
             }, withCancel: nil)
         }, withCancel: nil)
     }
+    
+    private lazy var messageCollectionView : UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 50
+        layout.minimumLineSpacing = 50
+        collectionView.contentInset = UIEdgeInsets.init(top: 12, left: 0, bottom: 58, right: 0)
+        collectionView.scrollIndicatorInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 50, right: 0)
+        collectionView.collectionViewLayout = layout
+        collectionView.alwaysBounceVertical = true
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        return collectionView
+    }()
     private lazy var sendButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .white
@@ -69,7 +93,15 @@ class MessageViewController: UICollectionViewController,UICollectionViewDelegate
         guard let imgData = selectedImage?.image?.jpegData(compressionQuality: 0.75) else { return }
         let updateMetaData = StorageMetadata.init()
         updateMetaData.contentType = " image/jpeg"
-        
+        let notifyID = UUID().uuidString
+        let timestamp : NSNumber = NSNumber(value: Int(NSDate().timeIntervalSince1970))
+        let userNotifyRef = Database.database().reference().child("user-notify").child(toID).child(notifyID)
+        userNotifyRef.updateChildValues(["fromID" : userID, "timestamp" : timestamp]) { (error, ref) in
+            if error != nil {
+                print(error!)
+                return
+            }
+        }
         imgRef.putData(imgData, metadata: updateMetaData) { (downloadMetadata, error) in
             if let error = error {
                 print(error)
@@ -86,7 +118,7 @@ class MessageViewController: UICollectionViewController,UICollectionViewDelegate
                             return
                         }
                     }
-                    let userMessagesRef = Database.database().reference(fromURL:"https://cardmakeroffice.firebaseio.com/").child("userMessages").child(userID)
+                    let userMessagesRef = Database.database().reference(fromURL:"https://cardmakeroffice.firebaseio.com/").child("userMessages").child(userID).child(toID)
                     guard let messageID = childRef.key else {return}
                     userMessagesRef.updateChildValues(["\(messageID)": 1]) { (err, dataref) in
                         if err != nil {
@@ -94,7 +126,7 @@ class MessageViewController: UICollectionViewController,UICollectionViewDelegate
                             return
                         }
                     }
-                    let recipientUserMessages = Database.database().reference().child("userMessages").child(toID)
+                    let recipientUserMessages = Database.database().reference().child("userMessages").child(toID).child(userID)
                     recipientUserMessages.updateChildValues(["\(messageID)": 1])
                     print("Update CardDatabase Successfully")
                     
@@ -109,9 +141,18 @@ class MessageViewController: UICollectionViewController,UICollectionViewDelegate
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellID")
+        view.backgroundColor = .white
+        messageCollectionView.backgroundColor = .white
+        messageCollectionView.register(CustomMessageCell.self, forCellWithReuseIdentifier: "cellID")
         setSendButton()
+        setCollectionView()
+        
+        
+        
+        //        let layout = UICollectionViewFlowLayout()
+        //        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        //        layout.itemSize = CGSize(width: 100, height: 100)
+        //        self.collectionView.collectionViewLayout = layout
         
         // Do any additional setup after loading the view.
     }
@@ -119,7 +160,15 @@ class MessageViewController: UICollectionViewController,UICollectionViewDelegate
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
+    private func setCollectionView() {
+        view.addSubview(messageCollectionView)
+        NSLayoutConstraint.activate([
+            messageCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            messageCollectionView.bottomAnchor.constraint(equalTo: sendButton.topAnchor, constant: -8),
+            messageCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            messageCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ])
+    }
     private func setSendButton() {
         
         view.addSubview(sendButton)
@@ -141,17 +190,7 @@ class MessageViewController: UICollectionViewController,UICollectionViewDelegate
         ])
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cards.count
-    }
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
-        cell.backgroundColor = .blue
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width, height: 80)
-    }
+    
     
     /*
      // MARK: - Navigation
@@ -163,5 +202,51 @@ class MessageViewController: UICollectionViewController,UICollectionViewDelegate
      }
      */
     
+}
+
+extension MessageViewController: UICollectionViewDelegate {
+    
+}
+
+extension MessageViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cards.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CustomMessageCell
+        let card = cards[indexPath.item]
+        cell.setCard = card
+        setCell(cell: cell, card: card)
+        //        cell.
+        return cell
+    }
+    func setCell(cell: CustomMessageCell, card : Card) {
+        if card.userID == Auth.auth().currentUser?.uid {
+            cell.bubbleViewRightAnchor?.isActive = true
+            cell.bubbleViewLeftAnchor?.isActive = false
+            cell.bubbleView.backgroundColor = blueColorCustomer
+        } else {
+            cell.bubbleViewRightAnchor?.isActive = false
+            cell.bubbleViewLeftAnchor?.isActive = true
+            cell.bubbleView.backgroundColor = greyColorCustomer
+            
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let card = cards[indexPath.row]
+        guard let imageURLString = card.imageURL, let audioString = card.audioNameString else {
+            return
+        }
+        let cv = MusicCardViewControler()
+        cv.imageURL = imageURLString
+        cv.audioString = audioString
+        self.navigationController?.pushViewController(cv, animated: false)
+    }
+}
+
+extension MessageViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.width, height: 300)
+    }
 }
 

@@ -14,9 +14,10 @@ class UserProfileViewController: UIViewController {
     var cardDictionary = [String: Card]()
     var cards = [Card]()
     var cellID = "cellID"
+    var users = [User]()
     private lazy var messageTableView: UITableView = {
        var tableView = UITableView()
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .white
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
@@ -86,6 +87,7 @@ class UserProfileViewController: UIViewController {
     
     lazy var nameLable : UILabel = {
         var lable = UILabel()
+        lable.textColor = .black
         lable.backgroundColor = .clear
         lable.text = "Name"
         lable.font = UIFont.boldSystemFont(ofSize: 20)
@@ -95,6 +97,7 @@ class UserProfileViewController: UIViewController {
     
     lazy var emailLable : UILabel = {
         var lable = UILabel()
+        lable.textColor = .black
         lable.backgroundColor = .clear
         lable.text = "Email Address"
         lable.font = UIFont.boldSystemFont(ofSize: 20)
@@ -129,7 +132,7 @@ class UserProfileViewController: UIViewController {
         getUserInfor()
         super.viewDidLoad()
         view.backgroundColor = .white
-        messageTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        messageTableView.register(UserCell.self, forCellReuseIdentifier: cellID)
         setProfileStackView()
         setButtonStackView()
         setTableView()
@@ -237,30 +240,37 @@ class UserProfileViewController: UIViewController {
         guard let userID = Auth.auth().currentUser?.uid else {return}
         let ref = Database.database().reference().child("userMessages").child(userID)
         ref.observe(.childAdded, with: { (snapshot) in
-            let messageID = snapshot.key
-            let messagesRef = Database.database().reference().child("SelectedCard").child(messageID)
-            messagesRef.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+            let uID = snapshot.key
+            Database.database().reference().child("userMessages").child(userID).child(uID).observe(.childAdded, with: {[weak self] (snapshot) in
                 guard let `self` = self else {return}
-                if let dictionary = snapshot.value as? [String: AnyObject] {
-                    let card = Card()
+                let messageID = snapshot.key
+                let messagesRef = Database.database().reference().child("SelectedCard").child(messageID)
+                messagesRef.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+                    guard let `self` = self else {return}
+                    if let dictionary = snapshot.value as? [String: AnyObject] {
+                        let card = Card()
 
-                    card.userID = dictionary["userID"] as? String
-                    card.toUserID = dictionary["toUserID"] as? String
-                    card.audioNameString = dictionary["audioName"] as? String
-                    card.imageURL = dictionary["cardImageURL"] as? String
-    //                self.cards.append(card)
-                    
-                    if let toID = card.toUserID {
-                        self.cardDictionary[toID] = card
-                        self.cards = Array(self.cardDictionary.values)
+                        card.userID = dictionary["userID"] as? String
+                        card.toUserID = dictionary["toUserID"] as? String
+                        card.audioNameString = dictionary["audioName"] as? String
+                        card.imageURL = dictionary["cardImageURL"] as? String
+        //                self.cards.append(card)
+                        self.reloadTable(card: card)
+                        
                     }
-                    
-                    DispatchQueue.main.async {
-                        self.messageTableView.reloadData()
-                    }
-                }
+                }, withCancel: nil)
             }, withCancel: nil)
         }, withCancel: nil)
+    }
+    private func reloadTable(card: Card) {
+        if let chatPartnerID = card.chatPartnerID() {
+            self.cardDictionary[chatPartnerID] = card
+            self.cards = Array(self.cardDictionary.values)
+        }
+        
+        DispatchQueue.main.async {
+            self.messageTableView.reloadData()
+        }
     }
 //    private func observeCard() {
 //        let ref = Database.database().reference().child("SelectedCard")
@@ -316,8 +326,8 @@ extension UserProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
+        let cell = messageTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! UserCell
+//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
         let card = cards[indexPath.row]
         let chatPartnerID : String?
         if card.userID == Auth.auth().currentUser?.uid {
@@ -329,15 +339,20 @@ extension UserProfileViewController: UITableViewDataSource {
             let ref = Database.database().reference().child("user").child(id)
             ref.observeSingleEvent(of: .value, with: { (snapshot) in
                 if let dictionary  = snapshot.value as? [String: AnyObject] {
-                    cell.textLabel?.text = dictionary["email"] as? String
-                    guard let userName = dictionary["name"] as? String else {return}
-                    cell.detailTextLabel?.text = "\(userName) have sent you a card"
-                    cell.textLabel?.font = cell.textLabel?.font.withSize(20)
-                    cell.detailTextLabel?.font = cell.detailTextLabel?.font.withSize(14)
+//                    cell.textLabel?.text = dictionary["email"] as? String
+//                    guard let userName = dictionary["name"] as? String else {return}
+                    let user = User()
+                    user.email = dictionary["email"] as? String
+                    user.name = dictionary["name"] as? String
+                    cell.user = user
                 }
             }, withCancel: nil)
         }
+        cell.selectionStyle = .none
         return cell
+    }
+    private func setCell(cell: UITableViewCell, user: User) {
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
@@ -345,16 +360,16 @@ extension UserProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let card = cards[indexPath.row]
         guard let chatPartnerID = card.chatPartnerID() else {return}
-//        print(chatPartnerID)
+
         let ref = Database.database().reference().child("user").child(chatPartnerID)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-//            print(snapshot)
+
             guard let dictionary = snapshot.value as? [String: AnyObject] else {return}
             let user = User()
             user.userID = chatPartnerID
             user.email = dictionary["email"] as? String
             user.name = dictionary["name"] as? String
-            let cv = MessageViewController(collectionViewLayout: UICollectionViewFlowLayout())
+            let cv = MessageViewController()
             cv.user = user
             self.navigationController?.pushViewController(cv, animated: true)
         }, withCancel: nil)
