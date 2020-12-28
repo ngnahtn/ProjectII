@@ -15,6 +15,7 @@
 		843708862577FE3100A2ECB0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843708852577FE3100A2ECB0 /* User.swift */; };
 		8437089625782BD300A2ECB0 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437089525782BD300A2ECB0 /* MessageViewController.swift */; };
 		843AFF1F2586CE9400A3B701 /* MusicCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AFF1E2586CE9400A3B701 /* MusicCardViewController.swift */; };
+		844225BD259A333200C6596F /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844225BC259A333200C6596F /* ColorModel.swift */; };
 		8470EFE32573F09700D31C5B /* SelectedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470EFE22573F09700D31C5B /* SelectedCardViewController.swift */; };
 		8470EFF02576B4E900D31C5B /* chrismastSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8470EFEB2576B4E400D31C5B /* chrismastSong.mp3 */; };
 		8470EFF12576B4E900D31C5B /* motherandfatherSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8470EFEC2576B4E500D31C5B /* motherandfatherSong.mp3 */; };
@@ -84,6 +85,7 @@
 		843708852577FE3100A2ECB0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8437089525782BD300A2ECB0 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		843AFF1E2586CE9400A3B701 /* MusicCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCardViewController.swift; sourceTree = "<group>"; };
+		844225BC259A333200C6596F /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		8470EFE22573F09700D31C5B /* SelectedCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCardViewController.swift; sourceTree = "<group>"; };
 		8470EFEB2576B4E400D31C5B /* chrismastSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chrismastSong.mp3; sourceTree = "<group>"; };
 		8470EFEC2576B4E500D31C5B /* motherandfatherSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = motherandfatherSong.mp3; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				EC5FD0972532C70D00C5CEC0 /* CellModel.swift */,
 				847B4AA32566B71D00B38703 /* ImageNameArray.swift */,
+				844225BC259A333200C6596F /* ColorModel.swift */,
 				ECE3C16F253583E000B0B394 /* InvitationCard.swift */,
 				ECE3C1742535842600B0B394 /* GreetingCard.swift */,
 				843708852577FE3100A2ECB0 /* User.swift */,
@@ -569,6 +572,7 @@
 				8437087E2577FC3B00A2ECB0 /* UserListTableViewController.swift in Sources */,
 				84AF1E1A2559BF9E00687089 /* CardCell.swift in Sources */,
 				8433749225979F8D00C72FD6 /* NotifyCell.swift in Sources */,
+				844225BD259A333200C6596F /* ColorModel.swift in Sources */,
 				ECE3C170253583E000B0B394 /* InvitationCard.swift in Sources */,
 				84337485259789EF00C72FD6 /* UserNotifyViewController.swift in Sources */,
 				EC919A612543033300B8C6A8 /* CustomFlowLayout.swift in Sources */,

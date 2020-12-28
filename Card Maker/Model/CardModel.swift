@@ -14,6 +14,13 @@ class Card: NSObject {
     var toUserID: String?
     var imageURL: String?
     var audioNameString: String?
+    var text: String?
+    var textPositionX: CGFloat?
+    var textPositionY: CGFloat?
+    var textWidth: CGFloat?
+    var textHeihgt: CGFloat?
+    var textColor : String?
+
     
     func chatPartnerID() -> String? {
         if userID == Auth.auth().currentUser?.uid {

@@ -31,4 +31,8 @@ struct imageNameArray {
     let imageName : String
     }
 
+struct colorArray {
+    let colorArray: UIColor
+}
+
 

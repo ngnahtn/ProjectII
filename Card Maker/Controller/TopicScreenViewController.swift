@@ -264,7 +264,6 @@ extension TopicScreenViewController: UICollectionViewDataSource {
         } else {
             let page = greetingTopic.topic[indexPath.item]
             cell.page = page
-            
         }
         
         return cell

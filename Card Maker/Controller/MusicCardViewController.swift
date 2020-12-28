@@ -12,10 +12,19 @@ import SDWebImage
 
 class MusicCardViewControler: UIViewController {
     var player : AVAudioPlayer!
-    var audioString = ""
+    var card = Card()
+//    var audioString = ""
     weak var navigation: UINavigationController?
-    var imageURL = ""
+//    var imageURL = ""
     
+    private lazy var textLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.init(name: "LacostaPERSONALUSEONLY", size: 20)
+        label.numberOfLines = 0
+        label.textColor = UIColor(hex: card.textColor!)
+        label.text = card.text!
+        return label
+    }()
     private lazy var cardTemplate : UIImageView = {
         let image = UIImage(named: "")
         let imageView = UIImageView(image: image)
@@ -38,15 +47,24 @@ class MusicCardViewControler: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        guard let imageURL = card.imageURL else {return}
+        guard let imageURL = card.imageURL, let positionX = card.textPositionX, let positionY = card.textPositionY, let width = card.textWidth, let height = card.textHeihgt else {
+            return
+        }
         view.backgroundColor = .white
         setTheImage()
         let url = URL(string: imageURL)
         cardTemplate.sd_setImage(with: url, completed: nil)
+        textLabel.frame = CGRect(x: positionX, y: positionY, width: width, height: height)
+        view.addSubview(textLabel)
         playMusic()
         
     }
 
     private func playMusic() {
+        guard let audioString = card.audioNameString else {
+            return
+        }
         let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: audioString, ofType: "mp3")!)
          player = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
          player.prepareToPlay()
@@ -80,3 +98,5 @@ class MusicCardViewControler: UIViewController {
      */
     
 }
+
+

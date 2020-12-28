@@ -13,6 +13,9 @@ import Firebase
 
 class UserListTableViewController: UITableViewController {
     var users = [User]()
+    var text = ""
+    var textPosition : CGRect?
+    var textColor : String?
     var audioStringName = ""
     var selectedImage = UIImageView()
     override func viewWillAppear(_ animated: Bool) {
@@ -73,8 +76,12 @@ class UserListTableViewController: UITableViewController {
         let cv = MessageViewController()
         let user = users[indexPath.row]
         cv.user = user
+        cv.text = self.text
+        cv.textPosition = self.textPosition!
         cv.audioStringName = self.audioStringName
         cv.selectedImage = self.selectedImage
+        cv.textColor = self.textColor
+
         self.navigationController?.pushViewController(cv, animated: true)
     }
 }

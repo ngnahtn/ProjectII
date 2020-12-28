@@ -29,8 +29,7 @@ class CardCell: UICollectionViewCell {
                     return
                 }
                 if let data = data {
-                    
-                    sefll.image = UIImage(data: data)
+                                        sefll.image = UIImage(data: data)
                     sefll.cardImage.image = sefll.image
                     
                     

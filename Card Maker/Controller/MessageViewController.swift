@@ -15,6 +15,9 @@ class MessageViewController: UIViewController {
 
     var blueColorCustomer = UIColor(red: 0, green: 137, blue: 249)
     var greyColorCustomer = UIColor(red: 240, green: 240, blue: 240)
+    var text = ""
+    var textPosition : CGRect?
+    var textColor : String?
     var audioStringName = ""
     var cards = [Card]()
     var selectedImage : UIImageView?
@@ -40,6 +43,12 @@ class MessageViewController: UIViewController {
                 card.toUserID = dictionary["toUserID"] as? String
                 card.audioNameString = dictionary["audioName"] as? String
                 card.imageURL = dictionary["cardImageURL"] as? String
+                card.text = dictionary["text"] as? String
+                card.textPositionX = dictionary["textPositionX"] as? CGFloat
+                card.textPositionY = dictionary["textPostionY"] as? CGFloat
+                card.textWidth = dictionary["textWidth"] as? CGFloat
+                card.textHeihgt = dictionary["textHeight"] as? CGFloat
+                card.textColor = dictionary["textColor"] as? String
                 
                 if card.chatPartnerID() == self.user?.userID {
                     self.cards.append(card)
@@ -57,6 +66,7 @@ class MessageViewController: UIViewController {
     
     private lazy var messageCollectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+    
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 50
@@ -89,6 +99,7 @@ class MessageViewController: UIViewController {
         guard let toID = user?.userID else {return}
         let imageUUID = UUID().uuidString
         let audioName = audioStringName
+        guard let textFrame = textPosition, let color = textColor else {return}
         let imgRef = Storage.storage().reference(withPath: "/CardSelected/\(imageUUID).jpg")
         guard let imgData = selectedImage?.image?.jpegData(compressionQuality: 0.75) else { return }
         let updateMetaData = StorageMetadata.init()
@@ -107,7 +118,7 @@ class MessageViewController: UIViewController {
                 print(error)
             } else {
                 imgRef.downloadURL { (url, Error) in
-                    let value = ["userID": userID, "toUserID" : toID,"audioName": audioName, "cardImageURL": url?.absoluteString] as [String: AnyObject]
+                    let value = ["userID": userID, "toUserID" : toID,"audioName": audioName,"text": self.text, "textPositionX": textFrame.origin.x, "textPostionY": textFrame.origin.y, "textWidth" : textFrame.width,"textHeight": textFrame.height,"textColor": color,"cardImageURL": url?.absoluteString as Any] as [String: AnyObject]
                     
                     let ref = Database.database().reference(fromURL:"https://cardmakeroffice.firebaseio.com/")
                     let userRef = ref.child("SelectedCard")
@@ -234,12 +245,11 @@ extension MessageViewController: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let card = cards[indexPath.row]
-        guard let imageURLString = card.imageURL, let audioString = card.audioNameString else {
-            return
-        }
+//        guard let imageURLString = card.imageURL, let audioString = card.audioNameString else {
+//            return
+//        }
         let cv = MusicCardViewControler()
-        cv.imageURL = imageURLString
-        cv.audioString = audioString
+        cv.card = card
         self.navigationController?.pushViewController(cv, animated: false)
     }
 }
