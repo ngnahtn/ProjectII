@@ -9,20 +9,24 @@
 import UIKit
 import AVFoundation
 import SDWebImage
+import FirebaseAuth
+import FirebaseDatabase
 
 class MusicCardViewControler: UIViewController {
     var player : AVAudioPlayer!
-    var card = Card()
-//    var audioString = ""
+    var card : Card? 
+    
+    var fromID = ""
+    //    var audioString = ""
     weak var navigation: UINavigationController?
-//    var imageURL = ""
+    //    var imageURL = ""
     
     private lazy var textLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.init(name: "LacostaPERSONALUSEONLY", size: 20)
+        label.font = UIFont.init(name: card!.fontString!, size: card!.textSize!)
         label.numberOfLines = 0
-        label.textColor = UIColor(hex: card.textColor!)
-        label.text = card.text!
+        label.textColor = UIColor(hex: card!.textColor!)
+        label.text = card?.text!
         return label
     }()
     private lazy var cardTemplate : UIImageView = {
@@ -32,9 +36,9 @@ class MusicCardViewControler: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-        
-        
- 
+    
+    
+    
     private lazy var separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
@@ -47,8 +51,7 @@ class MusicCardViewControler: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        guard let imageURL = card.imageURL else {return}
-        guard let imageURL = card.imageURL, let positionX = card.textPositionX, let positionY = card.textPositionY, let width = card.textWidth, let height = card.textHeihgt else {
+        guard let imageURL = card?.imageURL, let positionX = card?.textPositionX, let positionY = card?.textPositionY, let width = card?.textWidth, let height = card?.textHeihgt else {
             return
         }
         view.backgroundColor = .white
@@ -60,21 +63,20 @@ class MusicCardViewControler: UIViewController {
         playMusic()
         
     }
-
     private func playMusic() {
-        guard let audioString = card.audioNameString else {
+        guard let audioString = card!.audioNameString else {
             return
         }
         let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: audioString, ofType: "mp3")!)
-         player = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
-         player.prepareToPlay()
-         player.play()
+        player = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
+        player.prepareToPlay()
+        player.play()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(true,animated: false)
     }
-
+    
     private func setTheImage() {
         view.addSubview(cardTemplate)
         NSLayoutConstraint.activate([

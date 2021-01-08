@@ -34,5 +34,9 @@ struct imageNameArray {
 struct colorArray {
     let colorArray: UIColor
 }
+struct textFont {
+    let font: String
+    
+}
 
 

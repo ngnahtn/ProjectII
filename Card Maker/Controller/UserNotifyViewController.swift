@@ -13,6 +13,7 @@ import FirebaseAuth
 class UserNotifyViewController: UITableViewController {
     var notifies = [Notify]()
     var users = [User]()
+    var cards = [Card]()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -39,7 +40,31 @@ class UserNotifyViewController: UITableViewController {
             let notify = Notify()
             notify.fromID = dictionary["fromID"] as? String
             notify.timestamp = dictionary["timestamp"] as? NSNumber
-            guard let fromUserID = notify.fromID else {return}
+            notify.cardID = dictionary["cardID"] as? String
+            guard let fromUserID = notify.fromID, let cardID = notify.cardID else {return}
+            
+        
+                let messageRef = Database.database().reference().child("SelectedCard").child(cardID)
+                messageRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                    guard let dictionary = snapshot.value as? [String: AnyObject] else {return}
+                    let unrappedCard = Card()
+                    unrappedCard.userID = dictionary["userID"] as? String
+                    unrappedCard.toUserID = dictionary["toUserID"] as? String
+                    unrappedCard.audioNameString = dictionary["audioName"] as? String
+                    unrappedCard.imageURL = dictionary["cardImageURL"] as? String
+                    unrappedCard.text = dictionary["text"] as? String
+                    unrappedCard.textPositionX = dictionary["textPositionX"] as? CGFloat
+                    unrappedCard.textPositionY = dictionary["textPostionY"] as? CGFloat
+                    unrappedCard.textWidth = dictionary["textWidth"] as? CGFloat
+                    unrappedCard.textHeihgt = dictionary["textHeight"] as? CGFloat
+                    unrappedCard.textColor = dictionary["textColor"] as? String
+                    unrappedCard.textSize = dictionary["textSize"] as? CGFloat
+                    unrappedCard.fontString = dictionary["fontasString"] as? String
+                    if unrappedCard.userID == fromUserID {
+                        self.cards.append(unrappedCard)
+                    }
+                }, withCancel: nil)
+            
             
             Database.database().reference().child("user").child(fromUserID).observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
                 guard let `self` = self else {return}
@@ -66,6 +91,43 @@ class UserNotifyViewController: UITableViewController {
             
         }, withCancel: nil)
     }
+//    private func observeCard() {
+//        guard let uid = Auth.auth().currentUser?.uid else {return}
+//        let userMessagesRef = Database.database().reference().child("userMessages").child().child(uid)
+//        userMessagesRef.observe(.childAdded, with: { [weak self] (snapshot) in
+//            guard let `self` = self else {return}
+//            let cardID = snapshot.key
+//            let messageRef = Database.database().reference().child("SelectedCard").child(cardID)
+//            messageRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//                guard let dictionary = snapshot.value as? [String: AnyObject] else {return}
+//                let unrappedCard = Card()
+//                unrappedCard.userID = dictionary["userID"] as? String
+//                unrappedCard.toUserID = dictionary["toUserID"] as? String
+//                unrappedCard.audioNameString = dictionary["audioName"] as? String
+//                unrappedCard.imageURL = dictionary["cardImageURL"] as? String
+//                unrappedCard.text = dictionary["text"] as? String
+//                unrappedCard.textPositionX = dictionary["textPositionX"] as? CGFloat
+//                unrappedCard.textPositionY = dictionary["textPostionY"] as? CGFloat
+//                unrappedCard.textWidth = dictionary["textWidth"] as? CGFloat
+//                unrappedCard.textHeihgt = dictionary["textHeight"] as? CGFloat
+//                unrappedCard.textColor = dictionary["textColor"] as? String
+//                unrappedCard.textSize = dictionary["textSize"] as? CGFloat
+//                self.cards
+//
+////                if card.chatPartnerID() == uid {
+////
+//////                    DispatchQueue.main.async {
+//////                        self.messageCollectionView.reloadData()
+//////                        let indexPath = NSIndexPath(item: self.cards.count - 1, section: 0)
+//////                        self.messageCollectionView.scrollToItem(at: indexPath as IndexPath, at: .bottom, animated: true)
+//////                    }
+////                }
+//
+//
+//            }, withCancel: nil)
+//        }, withCancel: nil)
+//
+//    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -83,5 +145,11 @@ class UserNotifyViewController: UITableViewController {
         return 100
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cv = MusicCardViewControler()
+        let card = cards[indexPath.row]
+        cv.card = card
+        self.navigationController?.pushViewController(cv, animated: true)
+    }
     
 }

@@ -126,8 +126,8 @@ class TopicScreenViewController: UIViewController {
         return imgView
     }()
     
-    private lazy var userProfileImg: UIImageView = {
-        let img = UIImage(named: "userpro5_img")
+    private lazy var backButtonImg: UIImageView = {
+        let img = UIImage(named: "back_img")
         let iv = UIImageView(image: img)
         iv.isUserInteractionEnabled = true
         iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleProfileButton(_ :))))
@@ -138,8 +138,9 @@ class TopicScreenViewController: UIViewController {
     
     
     @objc private func handleProfileButton(_ sender: UIButton) {
-        let vc = UserProfileViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = MainScreenViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.popViewController(animated: true)
         
         
     }
@@ -206,12 +207,12 @@ class TopicScreenViewController: UIViewController {
         
         contentStackView.spacing = 30.0
         
-        view.addSubview(userProfileImg)
+        view.addSubview(backButtonImg)
         NSLayoutConstraint.activate([
-            userProfileImg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            userProfileImg.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 8),
-            userProfileImg.widthAnchor.constraint(equalToConstant: 50 ),
-            userProfileImg.heightAnchor.constraint(equalToConstant: 50)
+            backButtonImg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            backButtonImg.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 8),
+            backButtonImg.widthAnchor.constraint(equalToConstant: 50 ),
+            backButtonImg.heightAnchor.constraint(equalToConstant: 50)
             
         ])
         view.addSubview(notifyImg)

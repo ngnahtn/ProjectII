@@ -16,6 +16,19 @@
 		8437089625782BD300A2ECB0 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437089525782BD300A2ECB0 /* MessageViewController.swift */; };
 		843AFF1F2586CE9400A3B701 /* MusicCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AFF1E2586CE9400A3B701 /* MusicCardViewController.swift */; };
 		844225BD259A333200C6596F /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844225BC259A333200C6596F /* ColorModel.swift */; };
+		8442FF55259CB47600E9B471 /* ListOfUserCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442FF54259CB47600E9B471 /* ListOfUserCardViewController.swift */; };
+		8442FF5D259CB59200E9B471 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8442FF5C259CB59200E9B471 /* DancingScript-VariableFont_wght.ttf */; };
+		8442FF64259CB5BF00E9B471 /* Yellowtail-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8442FF63259CB5BF00E9B471 /* Yellowtail-Regular.ttf */; };
+		8442FF6C259CB73800E9B471 /* LibreBaskerville-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8442FF6B259CB73800E9B471 /* LibreBaskerville-Italic.ttf */; };
+		8442FF71259CB90800E9B471 /* ShadowsIntoLight-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8442FF70259CB90800E9B471 /* ShadowsIntoLight-Regular.ttf */; };
+		8442FF76259CB91500E9B471 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8442FF75259CB91500E9B471 /* IndieFlower-Regular.ttf */; };
+		8442FF7B259CB92A00E9B471 /* BungeeOutline-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8442FF7A259CB92A00E9B471 /* BungeeOutline-Regular.ttf */; };
+		8442FF80259CB93400E9B471 /* Redressed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8442FF7F259CB93400E9B471 /* Redressed-Regular.ttf */; };
+		8442FF85259CBAF000E9B471 /* TextFontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442FF84259CBAF000E9B471 /* TextFontModel.swift */; };
+		8442FF8A259CC55700E9B471 /* FontCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442FF89259CC55700E9B471 /* FontCell.swift */; };
+		8442FF95259CD8D200E9B471 /* CardFromUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442FF94259CD8D200E9B471 /* CardFromUserCell.swift */; };
+		8442FF9A259CF2BC00E9B471 /* EdittedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442FF99259CF2BC00E9B471 /* EdittedCardViewController.swift */; };
+		8450B44B259BB3DF00179905 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450B44A259BB3DF00179905 /* MainScreenViewController.swift */; };
 		8470EFE32573F09700D31C5B /* SelectedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470EFE22573F09700D31C5B /* SelectedCardViewController.swift */; };
 		8470EFF02576B4E900D31C5B /* chrismastSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8470EFEB2576B4E400D31C5B /* chrismastSong.mp3 */; };
 		8470EFF12576B4E900D31C5B /* motherandfatherSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8470EFEC2576B4E500D31C5B /* motherandfatherSong.mp3 */; };
@@ -86,6 +99,19 @@
 		8437089525782BD300A2ECB0 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		843AFF1E2586CE9400A3B701 /* MusicCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCardViewController.swift; sourceTree = "<group>"; };
 		844225BC259A333200C6596F /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
+		8442FF54259CB47600E9B471 /* ListOfUserCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfUserCardViewController.swift; sourceTree = "<group>"; };
+		8442FF5C259CB59200E9B471 /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		8442FF63259CB5BF00E9B471 /* Yellowtail-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yellowtail-Regular.ttf"; sourceTree = "<group>"; };
+		8442FF6B259CB73800E9B471 /* LibreBaskerville-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Italic.ttf"; sourceTree = "<group>"; };
+		8442FF70259CB90800E9B471 /* ShadowsIntoLight-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShadowsIntoLight-Regular.ttf"; sourceTree = "<group>"; };
+		8442FF75259CB91500E9B471 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
+		8442FF7A259CB92A00E9B471 /* BungeeOutline-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BungeeOutline-Regular.ttf"; sourceTree = "<group>"; };
+		8442FF7F259CB93400E9B471 /* Redressed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Redressed-Regular.ttf"; sourceTree = "<group>"; };
+		8442FF84259CBAF000E9B471 /* TextFontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFontModel.swift; sourceTree = "<group>"; };
+		8442FF89259CC55700E9B471 /* FontCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCell.swift; sourceTree = "<group>"; };
+		8442FF94259CD8D200E9B471 /* CardFromUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFromUserCell.swift; sourceTree = "<group>"; };
+		8442FF99259CF2BC00E9B471 /* EdittedCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdittedCardViewController.swift; sourceTree = "<group>"; };
+		8450B44A259BB3DF00179905 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		8470EFE22573F09700D31C5B /* SelectedCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCardViewController.swift; sourceTree = "<group>"; };
 		8470EFEB2576B4E400D31C5B /* chrismastSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chrismastSong.mp3; sourceTree = "<group>"; };
 		8470EFEC2576B4E500D31C5B /* motherandfatherSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = motherandfatherSong.mp3; sourceTree = "<group>"; };
@@ -193,6 +219,7 @@
 				EC5FD0972532C70D00C5CEC0 /* CellModel.swift */,
 				847B4AA32566B71D00B38703 /* ImageNameArray.swift */,
 				844225BC259A333200C6596F /* ColorModel.swift */,
+				8442FF84259CBAF000E9B471 /* TextFontModel.swift */,
 				ECE3C16F253583E000B0B394 /* InvitationCard.swift */,
 				ECE3C1742535842600B0B394 /* GreetingCard.swift */,
 				843708852577FE3100A2ECB0 /* User.swift */,
@@ -207,11 +234,14 @@
 			children = (
 				ECFC3E9D2527611E00748B20 /* ViewController.swift */,
 				84C0E7E7255C23D000154882 /* LoginView.swift */,
+				8450B44A259BB3DF00179905 /* MainScreenViewController.swift */,
+				8442FF54259CB47600E9B471 /* ListOfUserCardViewController.swift */,
+				8442FF99259CF2BC00E9B471 /* EdittedCardViewController.swift */,
 				847560FB255D986500F29BD3 /* UserProfileViewController.swift */,
+				84337484259789EF00C72FD6 /* UserNotifyViewController.swift */,
 				ECDB8FCA2529FEFF0026035C /* TopicScreenViewController.swift */,
 				ECA0BE8D25308FE200EE337C /* CardSelectingViewController.swift */,
 				8470EFE22573F09700D31C5B /* SelectedCardViewController.swift */,
-				84337484259789EF00C72FD6 /* UserNotifyViewController.swift */,
 				8437087D2577FC3B00A2ECB0 /* UserListTableViewController.swift */,
 				8437089525782BD300A2ECB0 /* MessageViewController.swift */,
 				843AFF1E2586CE9400A3B701 /* MusicCardViewController.swift */,
@@ -225,6 +255,8 @@
 				ECA0BE8B25307E8300EE337C /* CustomTopicCell.swift */,
 				EC919A602543033300B8C6A8 /* CustomFlowLayout.swift */,
 				84AF1E192559BF9E00687089 /* CardCell.swift */,
+				8442FF94259CD8D200E9B471 /* CardFromUserCell.swift */,
+				8442FF89259CC55700E9B471 /* FontCell.swift */,
 				84A8F952257D812400A27EB9 /* CustomMessageCell.swift */,
 				8400102B25937814002C289F /* UserCell.swift */,
 				8433749125979F8D00C72FD6 /* NotifyCell.swift */,
@@ -236,7 +268,14 @@
 			isa = PBXGroup;
 			children = (
 				EC5FD09C2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf */,
+				8442FF5C259CB59200E9B471 /* DancingScript-VariableFont_wght.ttf */,
+				8442FF63259CB5BF00E9B471 /* Yellowtail-Regular.ttf */,
+				8442FF70259CB90800E9B471 /* ShadowsIntoLight-Regular.ttf */,
+				8442FF7A259CB92A00E9B471 /* BungeeOutline-Regular.ttf */,
+				8442FF7F259CB93400E9B471 /* Redressed-Regular.ttf */,
 				EC92A4CA2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf */,
+				8442FF75259CB91500E9B471 /* IndieFlower-Regular.ttf */,
+				8442FF6B259CB73800E9B471 /* LibreBaskerville-Italic.ttf */,
 			);
 			path = TextFont;
 			sourceTree = "<group>";
@@ -413,15 +452,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8442FF7B259CB92A00E9B471 /* BungeeOutline-Regular.ttf in Resources */,
 				8470EFF42576B4E900D31C5B /* birthdayAudio.mp3 in Resources */,
 				EC5FD09D2532C81F00C5CEC0 /* Piazzolla-Italic-VariableFont_opsz,wght.ttf in Resources */,
 				EC92A4CB2529A8620029A20B /* Lacosta_PERSONAL_USE_ONLY.ttf in Resources */,
+				8442FF5D259CB59200E9B471 /* DancingScript-VariableFont_wght.ttf in Resources */,
+				8442FF6C259CB73800E9B471 /* LibreBaskerville-Italic.ttf in Resources */,
 				8470EFF12576B4E900D31C5B /* motherandfatherSong.mp3 in Resources */,
+				8442FF71259CB90800E9B471 /* ShadowsIntoLight-Regular.ttf in Resources */,
 				8470EFF02576B4E900D31C5B /* chrismastSong.mp3 in Resources */,
+				8442FF64259CB5BF00E9B471 /* Yellowtail-Regular.ttf in Resources */,
 				8470EFF22576B4E900D31C5B /* graduation.mp3 in Resources */,
+				8442FF76259CB91500E9B471 /* IndieFlower-Regular.ttf in Resources */,
 				ECFC3EA62527612100748B20 /* LaunchScreen.storyboard in Resources */,
 				8470EFF32576B4E900D31C5B /* weddingSong.mp3 in Resources */,
 				EC5FD0F0253310D300C5CEC0 /* Assets.xcassets in Resources */,
+				8442FF80259CB93400E9B471 /* Redressed-Regular.ttf in Resources */,
 				ECFC3EA12527611E00748B20 /* Main.storyboard in Resources */,
 				84C0E7F6255C415C00154882 /* GoogleService-Info.plist in Resources */,
 			);
@@ -557,19 +603,25 @@
 				ECDB8FCB2529FEFF0026035C /* TopicScreenViewController.swift in Sources */,
 				ECE3C1752535842600B0B394 /* GreetingCard.swift in Sources */,
 				ECFC3E9E2527611E00748B20 /* ViewController.swift in Sources */,
+				8442FF55259CB47600E9B471 /* ListOfUserCardViewController.swift in Sources */,
 				ECFC3E9A2527611E00748B20 /* AppDelegate.swift in Sources */,
 				84C5B6BF257AED680093785E /* CardModel.swift in Sources */,
 				84A8F953257D812400A27EB9 /* CustomMessageCell.swift in Sources */,
 				ECA0BE8E25308FE200EE337C /* CardSelectingViewController.swift in Sources */,
 				EC5FD0982532C70D00C5CEC0 /* CellModel.swift in Sources */,
+				8450B44B259BB3DF00179905 /* MainScreenViewController.swift in Sources */,
 				84C0E7E8255C23D000154882 /* LoginView.swift in Sources */,
 				ECFC3E9C2527611E00748B20 /* SceneDelegate.swift in Sources */,
 				847560FC255D986500F29BD3 /* UserProfileViewController.swift in Sources */,
+				8442FF95259CD8D200E9B471 /* CardFromUserCell.swift in Sources */,
 				843AFF1F2586CE9400A3B701 /* MusicCardViewController.swift in Sources */,
+				8442FF85259CBAF000E9B471 /* TextFontModel.swift in Sources */,
 				8437089625782BD300A2ECB0 /* MessageViewController.swift in Sources */,
+				8442FF8A259CC55700E9B471 /* FontCell.swift in Sources */,
 				847B4AA42566B71D00B38703 /* ImageNameArray.swift in Sources */,
 				843708862577FE3100A2ECB0 /* User.swift in Sources */,
 				8437087E2577FC3B00A2ECB0 /* UserListTableViewController.swift in Sources */,
+				8442FF9A259CF2BC00E9B471 /* EdittedCardViewController.swift in Sources */,
 				84AF1E1A2559BF9E00687089 /* CardCell.swift in Sources */,
 				8433749225979F8D00C72FD6 /* NotifyCell.swift in Sources */,
 				844225BD259A333200C6596F /* ColorModel.swift in Sources */,
@@ -757,6 +809,7 @@
 			baseConfigurationReference = CEDF9F6450D8AFC9DF77FE0A /* Pods-Card Maker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97MV55V5HU;
 				INFOPLIST_FILE = "Card Maker/Info.plist";
@@ -767,6 +820,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ngnahtn.Invitation-Maker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -777,6 +831,7 @@
 			baseConfigurationReference = 504A32B1B24EC58A20A20D92 /* Pods-Card Maker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97MV55V5HU;
 				INFOPLIST_FILE = "Card Maker/Info.plist";
@@ -787,6 +842,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ngnahtn.Invitation-Maker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

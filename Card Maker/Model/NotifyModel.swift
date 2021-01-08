@@ -11,4 +11,5 @@ import Foundation
 class Notify: NSObject  {
     var fromID : String?
     var timestamp : NSNumber?
+    var cardID: String?
 }

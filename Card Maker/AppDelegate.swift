@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("== \(names)")
             }
         }
+
         FirebaseApp.configure()
         return true
     }

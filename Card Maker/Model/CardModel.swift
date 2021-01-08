@@ -20,6 +20,8 @@ class Card: NSObject {
     var textWidth: CGFloat?
     var textHeihgt: CGFloat?
     var textColor : String?
+    var textSize: CGFloat?
+    var fontString: String?
 
     
     func chatPartnerID() -> String? {

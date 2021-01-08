@@ -13,7 +13,9 @@ import Firebase
 
 class UserListTableViewController: UITableViewController {
     var users = [User]()
+    var textFontString = ""
     var text = ""
+    var textSize : CGFloat?
     var textPosition : CGRect?
     var textColor : String?
     var audioStringName = ""
@@ -29,8 +31,15 @@ class UserListTableViewController: UITableViewController {
         tableView.backgroundColor = .white
         tableView.register(UserCell.self, forCellReuseIdentifier: "cellID")
         fetchUser()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Back To Home", style: .plain, target: self, action: #selector(addTapped))
+    }
+    @objc func addTapped() {
+        let cv = MainScreenViewController()
+        self.navigationController?.pushViewController(cv, animated: true)
+    
     }
     private func fetchUser() {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
         Database.database().reference().child("user").observe(.childAdded) { [weak self] (snapshot) in
             guard let `self` = self else {return}
             if let dictionary = snapshot.value as? [String: AnyObject] {
@@ -39,9 +48,12 @@ class UserListTableViewController: UITableViewController {
                 user.userID = snapshot.key
                 user.name = dictionary["name"] as? String
                 user.email = dictionary["email"] as? String
+                if uid != user.userID {
                 self.users.append(user)
+                }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                
                 }
             }
         }
@@ -81,7 +93,8 @@ class UserListTableViewController: UITableViewController {
         cv.audioStringName = self.audioStringName
         cv.selectedImage = self.selectedImage
         cv.textColor = self.textColor
-
+        cv.textSize = textSize
+        cv.textFontString = self.textFontString
         self.navigationController?.pushViewController(cv, animated: true)
     }
 }

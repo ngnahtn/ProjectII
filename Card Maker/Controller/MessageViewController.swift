@@ -16,6 +16,8 @@ class MessageViewController: UIViewController {
     var blueColorCustomer = UIColor(red: 0, green: 137, blue: 249)
     var greyColorCustomer = UIColor(red: 240, green: 240, blue: 240)
     var text = ""
+    var textFontString = ""
+    var textSize : CGFloat?
     var textPosition : CGRect?
     var textColor : String?
     var audioStringName = ""
@@ -30,6 +32,7 @@ class MessageViewController: UIViewController {
     }
     
     private func observeCardImage() {
+        
         guard let uid = Auth.auth().currentUser?.uid, let toID = user?.userID else {return}
         let userMessagesRef = Database.database().reference().child("userMessages").child(uid).child(toID)
         userMessagesRef.observe(.childAdded, with: { [weak self] (snapshot) in
@@ -49,7 +52,8 @@ class MessageViewController: UIViewController {
                 card.textWidth = dictionary["textWidth"] as? CGFloat
                 card.textHeihgt = dictionary["textHeight"] as? CGFloat
                 card.textColor = dictionary["textColor"] as? String
-                
+                card.textSize = dictionary["textSize"] as? CGFloat
+                card.fontString = dictionary["fontasString"] as? String
                 if card.chatPartnerID() == self.user?.userID {
                     self.cards.append(card)
                     DispatchQueue.main.async {
@@ -99,15 +103,26 @@ class MessageViewController: UIViewController {
         guard let toID = user?.userID else {return}
         let imageUUID = UUID().uuidString
         let audioName = audioStringName
-        guard let textFrame = textPosition, let color = textColor else {return}
+        let fontAsString = textFontString
+        guard let textFrame = textPosition, let color = textColor, let size = textSize else {return}
         let imgRef = Storage.storage().reference(withPath: "/CardSelected/\(imageUUID).jpg")
         guard let imgData = selectedImage?.image?.jpegData(compressionQuality: 0.75) else { return }
         let updateMetaData = StorageMetadata.init()
         updateMetaData.contentType = " image/jpeg"
         let notifyID = UUID().uuidString
+        let cardID = UUID().uuidString
         let timestamp : NSNumber = NSNumber(value: Int(NSDate().timeIntervalSince1970))
+        
+        let cardFromUserRef = Database.database().reference().child("user-cards").child(userID)
+        cardFromUserRef.updateChildValues(["\(cardID)": 1 ]) { (err, ref) in
+            if err != nil {
+                print(err!)
+                return
+            }
+        }
+        
         let userNotifyRef = Database.database().reference().child("user-notify").child(toID).child(notifyID)
-        userNotifyRef.updateChildValues(["fromID" : userID, "timestamp" : timestamp]) { (error, ref) in
+        userNotifyRef.updateChildValues(["fromID" : userID, "timestamp" : timestamp, "cardID": cardID]) { (error, ref) in
             if error != nil {
                 print(error!)
                 return
@@ -118,17 +133,17 @@ class MessageViewController: UIViewController {
                 print(error)
             } else {
                 imgRef.downloadURL { (url, Error) in
-                    let value = ["userID": userID, "toUserID" : toID,"audioName": audioName,"text": self.text, "textPositionX": textFrame.origin.x, "textPostionY": textFrame.origin.y, "textWidth" : textFrame.width,"textHeight": textFrame.height,"textColor": color,"cardImageURL": url?.absoluteString as Any] as [String: AnyObject]
+                    let value = ["userID": userID, "toUserID" : toID,"audioName": audioName,"text": self.text, "textPositionX": textFrame.origin.x, "textPostionY": textFrame.origin.y, "textWidth" : textFrame.width,"textHeight": textFrame.height,"textColor": color,"textSize": size ,"fontasString": fontAsString,"cardImageURL": url?.absoluteString as Any] as [String: AnyObject]
                     
                     let ref = Database.database().reference(fromURL:"https://cardmakeroffice.firebaseio.com/")
-                    let userRef = ref.child("SelectedCard")
-                    let childRef = userRef.childByAutoId()
+                    let childRef = ref.child("SelectedCard").child(cardID)
                     childRef.updateChildValues(value) { (err, ref) in
                         if err != nil {
                             print(err!)
                             return
                         }
                     }
+                    
                     let userMessagesRef = Database.database().reference(fromURL:"https://cardmakeroffice.firebaseio.com/").child("userMessages").child(userID).child(toID)
                     guard let messageID = childRef.key else {return}
                     userMessagesRef.updateChildValues(["\(messageID)": 1]) { (err, dataref) in
@@ -157,15 +172,6 @@ class MessageViewController: UIViewController {
         messageCollectionView.register(CustomMessageCell.self, forCellWithReuseIdentifier: "cellID")
         setSendButton()
         setCollectionView()
-        
-        
-        
-        //        let layout = UICollectionViewFlowLayout()
-        //        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        //        layout.itemSize = CGSize(width: 100, height: 100)
-        //        self.collectionView.collectionViewLayout = layout
-        
-        // Do any additional setup after loading the view.
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

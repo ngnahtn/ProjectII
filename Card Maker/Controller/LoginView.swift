@@ -332,7 +332,7 @@ class LoginView: UIViewController {
             if error != nil {
                 print(error!)
             } else {
-            let vc = TopicScreenViewController()
+            let vc = MainScreenViewController()
             self.navigationController?.pushViewController(vc, animated: true)
                
             }
@@ -349,8 +349,8 @@ class LoginView: UIViewController {
                 print(error!)
                 return
             }
-            let ref = Database.database().reference(fromURL:"https://cardmakeroffice.firebaseio.com/")
-            let userRef = ref.child("user").child(result!.user.uid)
+            let reff = Database.database().reference(fromURL:"https://cardmakeroffice.firebaseio.com/")
+            let userRef = reff.child("user").child(result!.user.uid)
             let value = ["name": name, "email": email]
             userRef.updateChildValues(value) { (err, ref) in
                 if err != nil {
@@ -358,7 +358,8 @@ class LoginView: UIViewController {
                 return
                 }
                 print("Successfully")
-                let vc = TopicScreenViewController()
+                print(ref)
+                let vc = MainScreenViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }

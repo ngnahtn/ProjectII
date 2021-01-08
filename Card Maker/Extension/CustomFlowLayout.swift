@@ -33,6 +33,7 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
         let itemWidth = (collectionViewWidth - padding * CGFloat(numberOfCollum! + 1))/CGFloat(numberOfCollum!)
         var collumArray = [CGFloat](repeating: 0.0, count: numberOfCollum!)
         var contentHeight : CGFloat = 0.0
+        guard collectionView.numberOfItems(inSection: 0) > 0 else {return}
         for i in 0 ... (collectionView.numberOfItems(inSection: 0)) - 1 {
             var tempX : CGFloat = 0.0
             var minHeight : CGFloat = 0.0
@@ -64,7 +65,7 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
         }
     }
     override var collectionViewContentSize: CGSize {
-        return self.contentSize
+        return self.contentSize ?? CGSize.zero
     }
     override func layoutAttributesForElements(in rect: CGRect) ->
         [UICollectionViewLayoutAttributes]? {

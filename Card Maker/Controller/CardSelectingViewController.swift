@@ -191,38 +191,6 @@ extension CardSelectingViewController: UICollectionViewDataSource{
 
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cv = SelectedCardViewController()
-//        switch identyfi {
-//        case "Graduation":
-//            cv.imageName = birthdayImageNameArray.imageName[indexPath.item].imageName
-//
-//        case "Father'sDay":
-//            cv.imageName = fatherDayImageNameArray.imageName[indexPath.item].imageName
-//
-//        case "Mother'sDay":
-//            cv.imageName = motherDayImageNameArray.imageName[indexPath.item].imageName
-//
-//        case "WeddingParty":
-//            cv.imageName = weddingImageNameArray.imageName[indexPath.item].imageName
-//
-//        case "BirthdayParty":
-//            cv.imageName = birthdayImageNameArray.imageName[indexPath.item].imageName
-//
-//
-//        case "ChristmasParty":
-//            cv.imageName = christmasImageNameArray.imageName[indexPath.item].imageName
-//
-//
-//        default:
-//            print("error")
-//        }
-//        print(cv.imageName)
-//        self.navigationController?.pushViewController(cv, animated: true)
-//    }
-    
-    
 }
 // MARK: - CustomFlowLayoutDelegate
 extension CardSelectingViewController: CustomFlowLayoutDelegate {

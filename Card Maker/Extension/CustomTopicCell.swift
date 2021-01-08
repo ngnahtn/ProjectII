@@ -16,6 +16,7 @@ class TopicCell: UICollectionViewCell {
         didSet {
             guard let unrappedPage = page else { return }
             let ref = Storage.storage().reference(withPath:  "/CardTopic/\(unrappedPage.pageImage).jpg")
+            
             ref.getData(maxSize: 4*1024*1024) {[weak self] (data, error) in
                 guard let sefll = self else {return}
                 
